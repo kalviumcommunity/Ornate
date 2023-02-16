@@ -17,6 +17,11 @@ Ornate will have the following features listed below:-
 The website can be utilized for design inspiration seeking as well as design reviewing.
 
 Milestones that are required to be achieved through the project are listed below:-
+|   |==Milestones== |== Completion status==|
+| |-------------|----------------|
+|Front end|NodeJs - setting up a project with package.json|👍|
+| |NodeJS Modules||
+
 
   Back-end
     NodeJs - setting up a project with package.json,
