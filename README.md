@@ -32,7 +32,7 @@ Milestones that are required to be achieved through the project are listed below
 |Partials| |
 |Middlewares| |
 |High-fid design for your application| |
-|ReactJS app initialization| |
+|ReactJS app initialization|👍 |
 |Application components created| |
 |Application deployed| | 
 |MongoDB - Installations and Basics| |
