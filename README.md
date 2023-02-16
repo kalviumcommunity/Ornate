@@ -31,9 +31,7 @@ Milestones that are required to be achieved through the project are listed below
 |Template Engines| |
 |Partials| |
 |Middlewares| |
-
-|Milestrone(Frontend)|Completion status|
-|----------|---------------|
+|----------Frontend-------------|
 |High-fid design for your application| |
 |ReactJS app initialization| |
 |Application components created| |
