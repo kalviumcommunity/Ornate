@@ -46,7 +46,7 @@ Milestones that are required to be achieved through the project are listed below
     Application deployed
     
   Full-Stack
-    IDE Setup,
+    IDE Setup
     NodeJs REPL,
     Using the public folder to serve files,
     Postman Use for Testing,
