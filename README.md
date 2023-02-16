@@ -53,3 +53,6 @@ Milestones that are required to be achieved through the project are listed below
     Authentication,
     Deployment.
     
+ |Milestrone|Completion status|
+ |----------|---------------|
+ |React js app installaton | 👍|
