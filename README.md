@@ -17,10 +17,20 @@ Ornate will have the following features listed below:-
 The website can be utilized for design inspiration seeking as well as design reviewing.
 
 Milestones that are required to be achieved through the project are listed below:-
-|   |==Milestones== |== Completion status==|
-| |-------------|----------------|
-|Front end|NodeJs - setting up a project with package.json|👍|
-| |NodeJS Modules||
+|Milestrone|Completion status|
+|----------|---------------|
+|NodeJs - setting up a project with package.json| |
+|NodeJS Modules| |
+|fs Module| |
+|Streams and Buffers| |
+|NPM| |
+|Nodemon| |
+|Events in Nodejs| |
+|Express JS - first route| |
+|ExpressJS - additional routes| |
+|Template Engines| |
+|Partials| |
+|Middlewares| |
 
 
   Back-end
@@ -58,6 +68,4 @@ Milestones that are required to be achieved through the project are listed below
     Authentication,
     Deployment.
     
- |Milestrone|Completion status|
- |----------|---------------|
- |React js app installaton | 👍|
+ 
