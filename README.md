@@ -17,7 +17,7 @@ Ornate will have the following features listed below:-
 The website can be utilized for design inspiration seeking as well as design reviewing.
 
 Milestones that are required to be achieved through the project are listed below:-
-|Milestrone|Completion status|
+|Milestrone(Backend)|Completion status|
 |----------|---------------|
 |NodeJs - setting up a project with package.json| |
 |NodeJS Modules| |
@@ -32,40 +32,29 @@ Milestones that are required to be achieved through the project are listed below
 |Partials| |
 |Middlewares| |
 
+|Milestrone(Frontend)|Completion status|
+|----------|---------------|
+|High-fid design for your application| |
+|ReactJS app initialization| |
+|Application components created| |
+|Application deployed| | 
 
-  Back-end
-    NodeJs - setting up a project with package.json,
-    NodeJS Modules,
-    fs Module,
-    Streams and Buffers,
-    NPM,
-    Nodemon,
-    Events in Nodejs,
-    Express JS - first route,
-    ExpressJS - additional routes,
-    Template Engines,
-    Partials,
-    Middlewares
+|Milestrone(Databases)|Completion status|
+|----------|---------------|
+|MongoDB - Installations and Basics| |
+|Mongoose| |
+|CRUD Operations| |
+|Simple API - CRUD Operations using NodeJs| |
+|Schemas and Models| |
     
-  Databases
-    MongoDB - Installations and Basics,
-    Mongoose,
-    CRUD Operations,
-    Simple API - CRUD Operations using NodeJs,
-    Schemas and Models
-    
-  Front-end
-    High-fid design for your application,
-    ReactJS app initialization,
-    Application components created,
-    Application deployed
-    
-  Full-Stack
-    IDE Setup
-    NodeJs REPL,
-    Using the public folder to serve files,
-    Postman Use for Testing,
-    Authentication,
-    Deployment.
+ 
+ |Milestrone(Fullstack)|Completion status|
+|----------|---------------|
+|IDE Setup| |
+|NodeJs REPL| |
+|Using the public folder to serve files| |
+|Postman Use for Testing| |
+|Authentication| |
+|Deployment| |
     
  
