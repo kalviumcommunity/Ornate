@@ -19,7 +19,7 @@ The website can be utilized for design inspiration seeking as well as design rev
 Milestones that are required to be achieved through the project are listed below:-
 |Milestrone|Completion status|
 |----------|---------------|
-|NodeJs - setting up a project with package.json| |
+|NodeJs - setting up a project with package.json| ✅|
 |NodeJS Modules| |
 |fs Module| |
 |Streams and Buffers| |
@@ -31,17 +31,17 @@ Milestones that are required to be achieved through the project are listed below
 |Template Engines| |
 |Partials| |
 |Middlewares| |
-|High-fid design for your application| |
+|High-fid design for your application|✅ |
 |ReactJS app initialization|:-:✅ |
 |Application components created| |
 |Application deployed| | 
-|MongoDB - Installations and Basics| |
+|MongoDB - Installations and Basics|✅|
 |Mongoose| |
 |CRUD Operations| |
 |Simple API - CRUD Operations using NodeJs| |
 |Schemas and Models| |
-|IDE Setup| |
-|NodeJs REPL| |
+|IDE Setup| ✅|
+|NodeJs REPL|✅ |
 |Using the public folder to serve files| |
 |Postman Use for Testing| |
 |Authentication| |
