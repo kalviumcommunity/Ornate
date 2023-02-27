@@ -1,0 +1,11 @@
+/* *{
+    background-color: black;
+} */
+.footer{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vw;
+    height: 19vh;
+
+}
