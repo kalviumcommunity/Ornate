@@ -1,38 +1,152 @@
-.App {
-  text-align: center;
+
+*{
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+  --black-color : black;
+  --white-color : white;
+  --purple-color : rgb(142, 57, 142);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* HOME PAGE STYLING */
+/* SIGN UP BUTTON */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* DISCOVER SECTION STYLING */
+
+/* Main container of the section */
+.card-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3vh;
+  margin-top: 5vh;
+  align-items: center;
+}
+
+/* indivisual card styling */
+.cards{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 18%;
+  height: 25vh;
+  border-radius: 5px;
+  background-color: white;
+}
+
+/* Image on the card and overler effect */
+.display_class{
+  width: 100%;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.overlay_image{
+  position: absolute;
+  top: 12.6vh;
+  bottom: 0;
+  left: 8.9vw;
+  right:0;
+  height: 25vh;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(114,114,125,1) 48%);
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: black;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+}
+
+.classes:hover .display_class {
+  opacity: 0.4  ;
+}
+
+.cards:hover .overlay_image {
+  opacity:0.6;
+}
+
+.user_actions{
+  height:100%;
+  width: 100%;
+}
+
+#like_section{
+  height: 17vh;
+  width: 100%;
+  display: flex;
+  align-items: top;
+  justify-content: right;
+  right: 2vh;
+  display: flex;
+}
+
+.like_button{
+  height: 4vh;
+  border: solid white 2px;
+  width: 2vw;
+  border-radius: 5vh;
+  z-index: 5;
+  opacity: 1;
+  background-color: white;
+
+}
+.like{
+  background-color: white;
+  transform: scale(1.5);
+  /* fill: white; */
+}
+
+#save_section{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save_button{
   color: white;
+  border: solid white 3px;
+  /* background-color: white; */
+  width: 50%;
+  height: 5vh;
+  border-radius: 6vh;
+  /* opacity: 1; */
+  font-weight: bolder;
+  font-size: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* Popular Creator Section Styling */
+.creator-box{
+  border-radius: 5%;
+  background-color: pink;
+  width: 10%;
+}
+.man{
+  width: 16%;
+  border-radius: 100%;
+}
+.box{
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* SIGN UP PAGE STYLING */
+.main{
+  height: 70%;
+  width: 60%;
+  background-color: yellow;
 }

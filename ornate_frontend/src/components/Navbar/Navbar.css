@@ -1,0 +1,108 @@
+/* Universal Styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--black-color);
+    /* overflow: hidden; */
+}
+
+/* Navbar Styling */
+
+
+/* Main Parent navbar Tag */
+#navbar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* logo divison styling */
+#logo{
+    height: 100%;
+    width: 15vw;
+}
+
+/* quick link divison styling */
+#quick_links{
+    display: flex;
+    flex-direction: row;
+    width: 35vw;
+    align-items: center;
+}
+
+#navbar_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+.elements{ 
+    padding-left: 3vh;
+    padding-right: 3vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh ;
+
+}
+.elements:hover{
+    border: solid var(--purple-color) 2px;
+
+}
+a:-webkit-any-link {
+    text-decoration: none;
+    color: white;
+    font-size:  1.2rem;
+}
+
+a:-webkit-any-link:hover {
+    text-decoration: solid underline rgb(204, 108, 204) 2px;
+}
+
+/* Search Button Divison Styling */
+#search_section{
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    color: white;
+}
+
+#search_box{
+    width: 20vw;
+    background-color: var(--black-color);
+    height: 5vh;
+    opacity: 0.2;
+    /* border-radius :15vh; */
+    border: solid var(--white-color) 2px;
+}
+
+::placeholder {
+  color: var(--white-color);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* Sign Up/ Login Divison Styling */
+#user_action{
+    width: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#signup_button{
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,151,1) 5%, rgba(252,70,107,1) 100%);
+    padding: 2vh;
+    border-radius: 10vh;
+    color: white;
+    font-size: 1.1rem;
+}
+
+
+#login{
+    text-decoration: underline solid var(--purple-color) 2px;
+}
