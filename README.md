@@ -20,30 +20,30 @@ Milestones that are required to be achieved through the project are listed below
 |Milestrone|Completion status|
 |----------|---------------|
 |NodeJs - setting up a project with package.json| ✅|
-|NodeJS Modules| |
+|NodeJS Modules|✅|
 |fs Module| |
 |Streams and Buffers| |
-|NPM| |
-|Nodemon| |
+|NPM|✅|
+|Nodemon|✅|
 |Events in Nodejs| |
-|Express JS - first route| |
+|Express JS - first route|✅|
 |ExpressJS - additional routes| |
 |Template Engines| |
 |Partials| |
 |Middlewares| |
 |High-fid design for your application|✅ |
-|ReactJS app initialization|:-:✅ |
+|ReactJS app initialization|✅ |
 |Application components created| |
 |Application deployed| | 
 |MongoDB - Installations and Basics|✅|
-|Mongoose| |
+|Mongoose|✅|
 |CRUD Operations| |
-|Simple API - CRUD Operations using NodeJs| |
+|Simple API - CRUD Operations using NodeJs|✅|
 |Schemas and Models| |
 |IDE Setup| ✅|
 |NodeJs REPL|✅ |
-|Using the public folder to serve files| |
-|Postman Use for Testing| |
+|Using the public folder to serve files|✅|
+|Postman Use for Testing|✅|
 |Authentication| |
 |Deployment| |
     
