@@ -3,253 +3,31 @@ import Navbar from "../components/Navbar/Navbar";
 import Classification from "../components/Classification/Classification";
 // import photography from "../Images/Photography.png";
 import Tagline from "../components/Tagline/Tagline";
-import { Link } from "react-router-dom";
+import bgImg from "../Images/background.jpg";
+import Instagram from "../Images/Instagram.png";
+import Facebook from "../Images/Vector.png";
+import Linkedin from "../Images/LinkedIn.png";
+import Github from "../Images/GitHub.png";
+
+// import { Link } from "react-router-dom";
 import "../App.css";
-import { FcLike } from "react-icons/fc";
-import { CiSaveDown2 } from "react-icons/ci";
-import { IoMdArrowForward } from "react-icons/io";
-import man from "../Images/man.png";
-import card from "../Images/card.png";
+// import { FcLike } from "react-icons/fc";
+// import { AiFillGithub } from "react-icons/ai";
+// import { CiSaveDown2 } from "react-icons/ci";
+// import { IoMdArrowForward } from "react-icons/io";
+// import man from "../Images/man.png";
+// import card from "../Images/card.png";
 
 const Home = () => {
   return (
-    <div>
+    <div id="main">
       <Navbar />
       <Classification />
       <Tagline />
-      {/* Displaying Images Section*/}
-      <div className="card-container">
-        <div className="cards">
-          {/* Image */}
-          <img src={card} alt="card" className="display_class" />
-          {/* overlay on hovering */}
-          <div className="overlay_image">
-            <div className="user_actions">
-              <div id="like_section">
-                <button className="like_button">
-                  <FcLike className="like" />
-                  {/* <FcLikePlaceholder className="like" /> */}
-                </button>
-              </div>
-
-              <div id="save_section">
-                <button className="save_button">
-                  Save <CiSaveDown2 />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="cards">
-          {/* Image */}
-          <img src={card} alt="card" className="display_class" />
-          {/* overlay on hovering */}
-          <div className="overlay_image">
-            <div className="user_actions">
-              <div id="like_section">
-                <button className="like_button">
-                  <FcLike className="like" />
-                  {/* <FcLikePlaceholder className="like" /> */}
-                </button>
-              </div>
-
-              <div id="save_section">
-                <button className="save_button">
-                  Save <CiSaveDown2 />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="cards">
-          {/* Image */}
-          <img src={card} alt="card" className="display_class" />
-          {/* overlay on hovering */}
-          <div className="overlay_image">
-            <div className="user_actions">
-              <div id="like_section">
-                <button className="like_button">
-                  <FcLike className="like" />
-                  {/* <FcLikePlaceholder className="like" /> */}
-                </button>
-              </div>
-
-              <div id="save_section">
-                <button className="save_button">
-                  Save <CiSaveDown2 />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="cards">
-          {/* Image */}
-          <img src={card} alt="card" className="display_class" />
-          {/* overlay on hovering */}
-          <div className="overlay_image">
-            <div className="user_actions">
-              <div id="like_section">
-                <button className="like_button">
-                  <FcLike className="like" />
-                  {/* <FcLikePlaceholder className="like" /> */}
-                </button>
-              </div>
-
-              <div id="save_section">
-                <button className="save_button">
-                  Save <CiSaveDown2 />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="cards">
-          {/* Image */}
-          <img src={card} alt="card" className="display_class" />
-          {/* overlay on hovering */}
-          <div className="overlay_image">
-            <div className="user_actions">
-              <div id="like_section">
-                <button className="like_button">
-                  <FcLike className="like" />
-                  {/* <FcLikePlaceholder className="like" /> */}
-                </button>
-              </div>
-
-              <div id="save_section">
-                <button className="save_button">
-                  Save <CiSaveDown2 />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="cards">
-          {/* Image */}
-          <img src={card} alt="card" className="display_class" />
-          {/* overlay on hovering */}
-          <div className="overlay_image">
-            <div className="user_actions">
-              <div id="like_section">
-                <button className="like_button">
-                  <FcLike className="like" />
-                  {/* <FcLikePlaceholder className="like" /> */}
-                </button>
-              </div>
-
-              <div id="save_section">
-                <button className="save_button">
-                  Save <CiSaveDown2 />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="cards">
-          {/* Image */}
-          <img src={card} alt="card" className="display_class" />
-          {/* overlay on hovering */}
-          <div className="overlay_image">
-            <div className="user_actions">
-              <div id="like_section">
-                <button className="like_button">
-                  <FcLike className="like" />
-                  {/* <FcLikePlaceholder className="like" /> */}
-                </button>
-              </div>
-
-              <div id="save_section">
-                <button className="save_button">
-                  Save <CiSaveDown2 />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="cards">
-          {/* Image */}
-          <img src={card} alt="card" className="display_class" />
-          {/* overlay on hovering */}
-          <div className="overlay_image">
-            <div className="user_actions">
-              <div id="like_section">
-                <button className="like_button">
-                  <FcLike className="like" />
-                  {/* <FcLikePlaceholder className="like" /> */}
-                </button>
-              </div>
-
-              <div id="save_section">
-                <button className="save_button">
-                  Save <CiSaveDown2 />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="cards">
-          {/* Image */}
-          <img src={card} alt="card" className="display_class" />
-          {/* overlay on hovering */}
-          <div className="overlay_image">
-            <div className="user_actions">
-              <div id="like_section">
-                <button className="like_button">
-                  <FcLike className="like" />
-                  {/* <FcLikePlaceholder className="like" /> */}
-                </button>
-              </div>
-
-              <div id="save_section">
-                <button className="save_button">
-                  Save <CiSaveDown2 />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="cards">
-          {/* Image */}
-          <img src={card} alt="card" className="display_class" />
-          {/* overlay on hovering */}
-          <div className="overlay_image">
-            <div className="user_actions">
-              <div id="like_section">
-                <button className="like_button">
-                  <FcLike className="like" />
-                  {/* <FcLikePlaceholder className="like" /> */}
-                </button>
-              </div>
-
-              <div id="save_section">
-                <button className="save_button">
-                  Save <CiSaveDown2 />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <Link to="/Discover">
-          <button id="viewmore_button">
-            View more
-            <IoMdArrowForward />
-          </button>
-        </Link>
-      </div>
 
       {/* SIGN UP SECTION */}
 
-      <div id="signup-shortcut">
+      {/* <div id="signup-shortcut">
         <div className="box">
           <p>Share your work with the World</p>
           <h1>
@@ -261,10 +39,10 @@ const Home = () => {
             </button>
           </Link>
         </div>
-      </div>
+      </div> */}
 
       {/* POPULAR CREATORS SECTION */}
-      <div>
+      {/* <div>
         <h2>Popular Creators</h2>
         <div className="creator-content">
           <div clas>
@@ -294,6 +72,39 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div> */}
+      <img src={bgImg} alt="" className="bg-img" />
+      <div id="floating_div">
+        <h1>BECAUSE BORING</h1>
+        <h1>
+          IS BAD FOR{" "}
+          <span>
+            {" "}
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            doloremque doloribus dolore, adipisci voluptate officiis recusandae
+            quasi, porro deserunt necessitatibus asperiores dolorem tempora sint
+            reprehenderit eligendi tenetur, fuga atque corporis.
+          </span>{" "}
+        </h1>
+        <h1>BUSINESS</h1>
+        <div id="icon_div">
+          <a href="https://www.instagram.com/?utm_source=pwa_homescreen">
+            <img src={Instagram} className="logos" alt="" />
+          </a>
+
+          <a href="https://www.facebook.com/">
+            <img src={Facebook} className="logos" alt="" />
+          </a>
+
+          <a href="https://www.linkedin.com/in/priyanshirana/">
+            <img src={Linkedin} className="logos" alt="" />
+          </a>
+
+          <a href="https://github.com/Ranapriyanshi">
+            <img src={Github} className="logos" alt="" />
+          </a>
+        </div>
+        <div id="content_divison"></div>
       </div>
     </div>
   );

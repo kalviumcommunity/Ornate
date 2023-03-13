@@ -2,11 +2,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inika:wght@700&family=Island+Moments&display=swap');
 /*     font-family: 'Dancing Script', cursive; */
 
+
+
+#content{
+    display: flex;
+    flex-direction: row;
+    height: 65vh;
+}
+
+/* sign in form divison */
+#signIn{
+    width: 30%;
+    height: 55vh;
+    margin-top: 8vh;
+    border-radius: 1.3vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background: url(../../Images/889.jpg);
+    background-size: cover; */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 10px;
+}
+
+#register{
+    color: rgb(70, 71, 74);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+
+}
+
+/* Input fields styling */
+
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+.mainLoginInput{
+  height: 40px;
+  padding: 5px;
+  font-size: 1em;
+  /* margin: 5px 0; */
+  color: black;
+}
+
+.mainLoginInput::placeholder { 
+font-family: FontAwesome;
+font-weight: lighter;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+font-size: 1em;
+color: var(--black-color);
+}
+
 /* Main divison for Tagline */
 #tagline{
-    width: 100%;
-    color: var(--white-color);
+    width: 65%;
+    /* height:66vh; */
+    /* display: flex; */
+    margin-left: 5vh;
+        margin-top: 6vh;
 
+    color: var(--white-color);
+    /* display: flex; */
+}
+
+button {
+    background: linear-gradient(90deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
+    padding: 10px;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+
+button:hover {
+    scale: 1.05;
+    background: linear-gradient(270deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
 }
 
 #line_one{

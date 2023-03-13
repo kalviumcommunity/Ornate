@@ -7,6 +7,7 @@ import "../App.css";
 import { FcLike } from "react-icons/fc";
 // import { FcLikePlaceholder } from "react-icons/fc";
 import { CiSaveDown2 } from "react-icons/ci";
+import { IconContext } from "react-icons";
 const Discover = () => {
   return (
     <div>
@@ -50,7 +51,9 @@ const Discover = () => {
             <div className="user_actions">
               <div id="like_section">
                 <button className="like_button">
-                  <FcLike className="like" />
+                  <IconContext.Provider value={{ color: "white" }}>
+                  <FcLike className="like" style={{ color: "white" }} />
+                  </IconContext.Provider>
                   {/* <FcLikePlaceholder className="like" /> */}
                 </button>
               </div>

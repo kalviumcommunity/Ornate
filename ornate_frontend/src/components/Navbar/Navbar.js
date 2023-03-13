@@ -1,8 +1,11 @@
 import React from "react";
 import "./Navbar.css";
 import "../../App.css";
-import logoImg from "../../Images/logoImg.png";
+import logoImg from "../../Images/logon.png";
 import { Link } from "react-router-dom";
+// import back from "../../Images/Rectangle-1.svg";
+// import { BiSun } from "react-icons/bi";
+// import { BiSearchAlt } from "react-icons/bi";
 
 const Navbar = () => {
   return (
@@ -37,23 +40,39 @@ const Navbar = () => {
       </div>
 
       {/* Search Button Divison */}
-      <div id="search_section">
-        <input
+      {/* <div id="search_section"> */}
+      {/* <input
           type="text"
           name=""
-          placeholder="Search Design..."
+          
+          placeholder=" Search Design..."
           id="search_box"
-        />
+        /> */}
+      {/* <input
+          class="mainLoginInput"
+          type="text"
+          placeholder="&#61442; Search Designs"
+          id="search_box"
+        /> */}
+      {/* </div> */}
+
+      {/* Backdrop divison */}
+      {/* <div>
+        <img src={back} alt="" id="back-image" />
       </div>
 
+      <div>
+        <button></button>
+      </div> */}
+
       {/* Sign up/ Log In Divison */}
-      <div id="user_action">
+      {/* <div id="user_action">
         <Link to="/SignUp" id="signup">
           <button id="signup_button">Sign up</button>
         </Link>
         &nbsp;
         <Link id="login">Log In</Link>
-      </div>
+      </div> */}
     </nav>
   );
 };
