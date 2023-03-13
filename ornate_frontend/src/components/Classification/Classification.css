@@ -1,28 +1,59 @@
-.container{
-    position: relative;
-    width: 50%;
+/* Universal Styling */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.image{
-    display: block;
-    width: 100%;
-    height: auto;
-}
-.overlay{
-   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
+/* Main divison for classiciation section */
+#classification_section{
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* All classes */
+.classes{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.display_class_image{
+  width: 90%;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.overlay{
+  position: absolute;
+  top: 5.5vh;
+  bottom: 0;
+  left: 6.4vw;
+  right:0;
+  height: 10.9vh;
+  width: 13vw;
   opacity: 0;
   transition: .5s ease;
-  background: rgba(92, 82, 166, 1);
-  border-radius: 100px;
+  background: linear-gradient(90deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /* color: grey; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 65vh;
 
 }
-.container:hover .overlay {
-  opacity: 1;
+
+.classes:hover .display_class_image {
+  opacity: 0.5;
+}
+
+.classes:hover .overlay {
+  opacity:1;
 }
 
 .text {
@@ -36,3 +67,4 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+

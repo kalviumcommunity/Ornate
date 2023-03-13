@@ -1,44 +1,78 @@
 import React from "react";
 import "./Navbar.css";
-import logoImg from "../../Images/logoImg.png";
+import "../../App.css";
+import logoImg from "../../Images/logon.png";
 import { Link } from "react-router-dom";
-// import {IoIosSearch} from'react-icons/io';
+// import back from "../../Images/Rectangle-1.svg";
+// import { BiSun } from "react-icons/bi";
+// import { BiSearchAlt } from "react-icons/bi";
 
 const Navbar = () => {
   return (
-    <nav>
-      <div>
-        <div>
-          <Link to="/" className="">
-            <img src={logoImg} alt="site logo" className="logo" />
-          </Link>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <Link to="/Home" className="">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className="/Discover">Discover</Link>
-            </li>
-            <li>
-              <Link className="/Creator">Creators</Link>
-            </li>
-            <li>
-              <div>
-                <input type="text" name="" placeholder="Search..." id="" />
-                <div className="search">{/* <IoIosSearch /> */}</div>
-              </div>
-            </li>
+    // NAVBAR ELEMENT
+    <nav id="navbar">
+      {/* Logo Divison */}
+      <div id="logo">
+        <Link to="/" className="">
+          <img src={logoImg} alt="site logo" className="logo" />
+        </Link>
+      </div>
 
-            <li>
-              <Link className="/SignUp">Sign up</Link>
-            </li>
-          </ul>
+      {/* Quick Links Divison */}
+      <div id="quick_links">
+        <div id="navbar_links">
+          <div className="elements">
+            <Link to="/" className="link_text">
+              Home
+            </Link>
+          </div>
+          <div className="elements">
+            <Link to="/Discover" className="link_text">
+              Discover
+            </Link>
+          </div>
+          <div className="elements">
+            <Link to="/Creator" className="link_text">
+              Creators
+            </Link>
+          </div>
         </div>
       </div>
+
+      {/* Search Button Divison */}
+      {/* <div id="search_section"> */}
+      {/* <input
+          type="text"
+          name=""
+          
+          placeholder=" Search Design..."
+          id="search_box"
+        /> */}
+      {/* <input
+          class="mainLoginInput"
+          type="text"
+          placeholder="&#61442; Search Designs"
+          id="search_box"
+        /> */}
+      {/* </div> */}
+
+      {/* Backdrop divison */}
+      {/* <div>
+        <img src={back} alt="" id="back-image" />
+      </div>
+
+      <div>
+        <button></button>
+      </div> */}
+
+      {/* Sign up/ Log In Divison */}
+      {/* <div id="user_action">
+        <Link to="/SignUp" id="signup">
+          <button id="signup_button">Sign up</button>
+        </Link>
+        &nbsp;
+        <Link id="login">Log In</Link>
+      </div> */}
     </nav>
   );
 };
