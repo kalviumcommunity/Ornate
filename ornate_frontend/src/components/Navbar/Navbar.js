@@ -31,10 +31,18 @@ const Navbar = () => {
               Discover
             </Link>
           </div>
-          <div className="elements">
-            <Link to="/Creator" className="link_text">
-              Creators
+          {/* <div className="elements">
+            <Link to="/Login" className="link_text">
+              Login
             </Link>
+          </div> */}
+          <div>
+            <button
+              className="upload_button gradient_button"
+              style={{ width: "9vw" }}
+            >
+              <Link to="/Form">Register</Link>
+            </button>
           </div>
         </div>
       </div>

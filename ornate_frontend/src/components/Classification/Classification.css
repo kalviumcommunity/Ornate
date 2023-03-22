@@ -8,15 +8,15 @@
 #classification_section{
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 /* All classes */
 .classes{
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   position: relative;
+  justify-content: center;
 }
 
 .display_class_image{
@@ -31,7 +31,7 @@
   position: absolute;
   top: 5.5vh;
   bottom: 0;
-  left: 6.4vw;
+  left: 7vw;
   right:0;
   height: 10.9vh;
   width: 13vw;
@@ -45,7 +45,6 @@
   align-items: center;
   justify-content: center;
   border-radius: 65vh;
-
 }
 
 .classes:hover .display_class_image {
