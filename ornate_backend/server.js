@@ -1,43 +1,30 @@
-const { response } = require("express");
 const express = require("express");
-require("dotenv").config();
-const mongoose = require("mongoose");
+const app = express();
+
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
+const port = process.env.PORT || 300;
 
 const firstRoute = require("./routes/firstroute");
+const userRoutes = require("./router/auth");
+
+// require("./DB/conn");
+app.use(express.json());
+// const User = require("./model/userSchema");
 
 // middlewares
-const app = express();
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
 
-app.get("/", (req, resp) => {
-  resp.json({ mssg: "Hello" });
-});
+app.use(require("./router/auth"));
 
-app.get("/login", (req, resp) => {
-  resp.json({ mssg: "Hellologin" });
-});
-
-app.get("/", (req, resp) => {
-  resp.json({ mssg: "Hello" });
-});
-// app.post("/", (req, resp) => {
-//   resp.json({ mssg: "post req" });
-// });
-
-// app.patch("/:id", (req, resp) => {
-//   resp.json({ mssg: "patch req" });
-// });
-
-// app.delete("/:id", (req, resp) => {
-//   resp.json({ mssg: "delete req" });
-// });
+app.use("/api/auth", userRoutes);
 
 // using Routes
 app.use("/api/workouts", firstRoute);
 
-app.listen(process.env.PORT, () => {
-  console.log("hello");
+app.listen(port, () => {
+  console.log("listening to post", port);
 });

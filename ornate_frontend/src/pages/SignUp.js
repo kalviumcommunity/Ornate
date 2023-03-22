@@ -1,5 +1,8 @@
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import "../components/Tagline/Tagline.css";
+// import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const SignUp = () => {
   const initialValues = {
@@ -8,6 +11,13 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
   };
+
+  // Additions
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  //
+
+  const [login, setLogin] = useState(true);
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
@@ -38,65 +48,181 @@ const SignUp = () => {
       window.open("http://localhost:3000/", "_self");
     }, 1000);
   };
+
+  const handleLogin = () => {
+    setLogin(!login);
+  };
   return (
     <div className="sign-content">
-      <div id="images"></div>
+      {login ? (
+        <>
+          <div id="images"></div>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={onSubmit}
+          >
+            {({ isSubmitting }) => (
+              <Form id="main_form">
+                {/* <div id="box"> */}
+                <h1 id="register">Login</h1>
+                <div>
+                  <div className="name_input">
+                    <Field
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="mainLoginInput"
+                      // Add
+                      onchange={(e) => {
+                        setEmail(e.target.value);
+                      }}
+                      value={email}
+                      //
+                    />
+                    <ErrorMessage
+                      className="error_msg "
+                      name="email"
+                      component="H6"
+                    />
+                  </div>
 
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={onSubmit}
-      >
-        {({ isSubmitting }) => (
-          <Form id="black">
-            <div id="box">
-              <h1>Register</h1>
-              <div>
-                <Field
-                  type="text"
-                  name="name"
-                  placeholder=" Name"
-                  className="input-field"
-                />
-                <ErrorMessage name="name" component="div" />
-                <br />
-                <Field
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  className="input-field"
-                />
-                <ErrorMessage name="email" component="div" />
-                <br />
-                <Field
-                  type="password"
-                  name="password"
-                  placeholder="Password "
-                  className="input-field"
-                />
-                <ErrorMessage name="password" component="div" />
-                <br />
-                <Field
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="Confirm Password"
-                  className="input-field"
-                />
-                <ErrorMessage name="confirmPassword" component="div" />
-                <br />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  id="submit"
-                  className="submit_button"
-                >
-                  Register
-                </button>
-              </div>
-            </div>
-          </Form>
-        )}
-      </Formik>
+                  <br />
+                  <div className="name_input">
+                    <Field
+                      type="password"
+                      name="password"
+                      placeholder="&#61475; Password"
+                      class="mainLoginInput"
+                      // Add
+                      onchange={(e) => {
+                        setPassword(e.target.value);
+                      }}
+                      value={password}
+                      //
+                    />
+                    <ErrorMessage
+                      className="error_msg "
+                      name="password"
+                      component="H6"
+                    />
+                  </div>
+
+                  <br />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    id="submit"
+                    className="gradient_button register_button"
+                  >
+                    Login
+                  </button>
+                </div>
+                {/* </div> */}
+              </Form>
+            )}
+          </Formik>
+          <div className="login_div">
+            <p>OR</p>
+            <p>
+              Don't have an account? <span onClick={handleLogin}>Signup</span>
+            </p>
+          </div>
+        </>
+      ) : (
+        <>
+          <div id="images"></div>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={onSubmit}
+          >
+            {({ isSubmitting }) => (
+              <Form id="main_form">
+                {/* <div id="box"> */}
+                <h1 id="register">Register</h1>
+                <div>
+                  <div className="name_input">
+                    <Field
+                      type="text"
+                      name="name"
+                      placeholder="&#61447; Name"
+                      className="mainLoginInput"
+                    />
+                    <ErrorMessage
+                      className="error_msg"
+                      name="name"
+                      component="H6"
+                    />
+                  </div>
+
+                  <br />
+                  <div className="name_input">
+                    <Field
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="mainLoginInput"
+                    />
+                    <ErrorMessage
+                      className="error_msg "
+                      name="email"
+                      component="H6"
+                    />
+                  </div>
+
+                  <br />
+                  <div className="name_input">
+                    <Field
+                      type="password"
+                      name="password"
+                      placeholder="&#61475; Password"
+                      class="mainLoginInput"
+                    />
+                    <ErrorMessage
+                      className="error_msg "
+                      name="password"
+                      component="H6"
+                    />
+                  </div>
+
+                  <br />
+                  <div className="name_input">
+                    <Field
+                      type="password"
+                      name="confirmPassword"
+                      placeholder="&#61475; Confirm Password"
+                      class="mainLoginInput"
+                    />
+                    <ErrorMessage
+                      className="error_msg "
+                      name="confirmPassword"
+                      component="H6"
+                    />
+                  </div>
+
+                  <br />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    id="submit"
+                    className="gradient_button register_button"
+                  >
+                    Register
+                  </button>
+                </div>
+                {/* </div> */}
+              </Form>
+            )}
+          </Formik>
+          <div className="login_div">
+            <p>OR</p>
+            <p>
+              Already have an account? <span onClick={handleLogin}>Login</span>
+            </p>
+          </div>
+        </>
+      )}
     </div>
   );
 };

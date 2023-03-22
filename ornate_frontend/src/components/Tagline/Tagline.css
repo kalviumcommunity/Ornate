@@ -2,35 +2,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inika:wght@700&family=Island+Moments&display=swap');
 /*     font-family: 'Dancing Script', cursive; */
 
+*{
+    box-sizing: border-box;
+}
 
 
 #content{
     display: flex;
     flex-direction: row;
-    height: 65vh;
+    height: 70vh;
 }
 
 /* sign in form divison */
 #signIn{
-    width: 30%;
-    height: 55vh;
+    width: 40%;
+    height: 50vh;
     margin-top: 8vh;
     border-radius: 1.3vh;
-    background-color: white;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    align-items: flex-end;
+    justify-content:end;
     /* background: url(../../Images/889.jpg);
     background-size: cover; */
 }
 
-form {
+/* form {
     display: flex;
     flex-direction: column;
     width: 80%;
     gap: 10px;
-}
+} */
 
 #register{
     color: rgb(70, 71, 74);
@@ -47,21 +50,31 @@ form {
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
 .mainLoginInput{
-  height: 40px;
+  height: 30px;
+  width: 20vw;
   padding: 5px;
   font-size: 1em;
   /* margin: 5px 0; */
   color: black;
+  /* gap: 15px; */
+  margin-top: 5px;
+  /* margin-bottom: 10px; */
 }
 
 .mainLoginInput::placeholder { 
 font-family: FontAwesome;
+width: 15%;
 font-weight: lighter;
 overflow: visible;
 vertical-align: top;
 display: inline-block !important;
 font-size: 1em;
+
 color: var(--black-color);
+}
+
+.name_input{
+    height: 30px;
 }
 
 /* Main divison for Tagline */
@@ -76,21 +89,67 @@ color: var(--black-color);
     /* display: flex; */
 }
 
-button {
+.chat_button {
+    background: black;
+    /* color: black; */
+    width: 15vw;
+    padding: 10px;
+    transition: all 0.3s;
+    border-radius: 10px;
+    /* margin-top: 15px; */
+}
+
+.chat_button:hover {
+    scale: 1.05;
+    font-size: 0.9em;
+    /* background: linear-gradient(270deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%); */
+}
+
+.gradient_button {
     background: linear-gradient(90deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
     padding: 10px;
     transition: all 0.3s;
     border-radius: 10px;
 }
 
-button:hover {
+.gradient_button:hover {
     scale: 1.05;
     background: linear-gradient(270deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
 }
 
+.register_button{
+    width: 20vw;
+    margin-top: 2px;
+}
+
+.login_div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    flex-direction: column;
+}
+
+.login_div p {
+    color: black;
+}
+
+.login_div span {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+.login_div span:hover {
+    font-size: 1.1em;
+}
+
 #line_one{
     font-size: 4.5rem;
-    font-family: 'Inika', serif;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 #line_two{
@@ -110,10 +169,34 @@ button:hover {
     background: rgba(136, 121, 121, 1);
 
 }
+#chat_button{
+    background-color: black;
+}
 .button{
     background-color: black;
     color: white;
     padding: 1rem;
     height: 1rem;
     width: 10rem;
+}
+
+/* FORMIK STYLING */
+#main_form{
+    color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#box{
+    color: black;
+    width: 100%;
+}
+
+.error_msg{
+    color: red;
+    height: 10px;
+
 }

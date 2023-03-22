@@ -52,7 +52,7 @@ const Discover = () => {
               <div id="like_section">
                 <button className="like_button">
                   <IconContext.Provider value={{ color: "white" }}>
-                  <FcLike className="like" style={{ color: "white" }} />
+                    <FcLike className="like" style={{ color: "white" }} />
                   </IconContext.Provider>
                   {/* <FcLikePlaceholder className="like" /> */}
                 </button>
