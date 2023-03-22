@@ -13,11 +13,11 @@ const SignUp = () => {
   };
 
   // Additions
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-// 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  //
 
-  const [login, setLogin] = useState(true)
+  const [login, setLogin] = useState(true);
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
@@ -78,7 +78,6 @@ const SignUp = () => {
                         setEmail(e.target.value);
                       }}
                       value={email}
-                      // 
                     />
                     <ErrorMessage
                       className="error_msg "
@@ -99,7 +98,6 @@ const SignUp = () => {
                         setPassword(e.target.value);
                       }}
                       value={password}
-                      // 
                     />
                     <ErrorMessage
                       className="error_msg "
