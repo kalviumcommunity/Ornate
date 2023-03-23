@@ -25,21 +25,21 @@ Milestones that are required to be achieved through the project are listed below
 |Streams and Buffers| |
 |NPM|✅|
 |Nodemon|✅|
-|Events in Nodejs| |
+|Events in Nodejs|✅ |
 |Express JS - first route|✅|
-|ExpressJS - additional routes| |
+|ExpressJS - additional routes|✅ |
 |Template Engines| |
 |Partials| |
-|Middlewares| |
+|Middlewares|✅ |
 |High-fid design for your application|✅ |
 |ReactJS app initialization|✅ |
-|Application components created| |
+|Application components created| ✅|
 |Application deployed| |
 |MongoDB - Installations and Basics|✅|
 |Mongoose|✅|
-|CRUD Operations| |
+|CRUD Operations| ✅|
 |Simple API - CRUD Operations using NodeJs|✅|
-|Schemas and Models| |
+|Schemas and Models|✅|
 |IDE Setup| ✅|
 |NodeJs REPL|✅ |
 |Using the public folder to serve files|✅|
