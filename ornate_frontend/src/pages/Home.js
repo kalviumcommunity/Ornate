@@ -9,7 +9,7 @@ import Linkedin from "../Images/LinkedIn.png";
 import Github from "../Images/GitHub.png";
 import { FcLike } from "react-icons/fc";
 import { CiSaveDown2 } from "react-icons/ci";
-import { IconContext } from "react-icons";
+// import { IconContext } from "react-icons";
 import Card from "../Images/card.png";
 import "../App.css";
 import { BsFillChatLeftTextFill } from "react-icons/bs";

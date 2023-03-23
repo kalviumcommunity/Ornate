@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 import { AuthContextProvider } from "./context/AuthContext";
-import { Formik } from "formik";
+// import { Formik } from "formik";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
