@@ -134,18 +134,18 @@ const Home = () => {
                       {/* Image */}
                       <img src={Card} alt="card" className="display_class" />
                       {/* overlay on hovering */}
-                      <div className="user_actions">
-                        <div id="like_section">
-                          <button className="like_button">
-                            <FcLike className="like" />
-                          </button>
+                        <div className="user_actions">
+                          <div id="like_section">
+                            <button className="like_button">
+                              <FcLike className="like" />
+                            </button>
+                          </div>
+                          <div id="save_section">
+                            <button className="save_button">
+                              Save <CiSaveDown2 fill="black" />
+                            </button>
+                          </div>
                         </div>
-                        <div id="save_section">
-                          <button className="save_button">
-                            Save <CiSaveDown2 fill="black" />
-                          </button>
-                        </div>
-                      </div>
                     </div>
                   );
                 })}

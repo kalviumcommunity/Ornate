@@ -50,8 +50,8 @@ const SignUp = () => {
   };
 
   const handleLogin = () => {
-    setLogin(!login);
-  };
+    setLogin(!login)
+  }
   return (
     <div className="sign-content">
       {login ? (
@@ -78,7 +78,6 @@ const SignUp = () => {
                         setEmail(e.target.value);
                       }}
                       value={email}
-                      //
                     />
                     <ErrorMessage
                       className="error_msg "
@@ -99,7 +98,6 @@ const SignUp = () => {
                         setPassword(e.target.value);
                       }}
                       value={password}
-                      //
                     />
                     <ErrorMessage
                       className="error_msg "

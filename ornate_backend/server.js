@@ -22,6 +22,7 @@ app.use(require("./router/auth"));
 
 app.use("/api/auth", userRoutes);
 
+
 // using Routes
 app.use("/api/workouts", firstRoute);
 
