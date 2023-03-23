@@ -3,9 +3,6 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const validator = require("validator");
 
-
-
-
 const userSchema = new mongoose.Schema({
   //
   email: {
@@ -22,8 +19,6 @@ const userSchema = new mongoose.Schema({
   //     required: true,
   //   },
 });
-
-
 
 // static register method
 
@@ -53,14 +48,12 @@ userSchema.statics.register = async function (email, password) {
   return user;
 };
 
-
 // static login method
 
 userSchema.statics.login = async function (email, password) {
   if (!email || !password) {
     throw Error("All the feilds must be filled.");
   }
-  
   const user = await this.findOne({ email });
   if (!user) {
     throw Error("Incorrect Email");

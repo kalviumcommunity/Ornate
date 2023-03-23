@@ -13,10 +13,9 @@ import "./Classification.css";
 const Classification = () => {
   return (
     // Claasification Section which acts as a Filter Section for sorting images.
-    
+
     // Main classification Divison
     <div id="classification_section">
-      
       {/* Different Sections Description */}
 
       {/* Photography Section */}
@@ -104,7 +103,6 @@ const Classification = () => {
           <div className="text">Illustrations</div>
         </div>
       </div>
-
     </div>
   );
 };

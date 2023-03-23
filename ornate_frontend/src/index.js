@@ -21,7 +21,7 @@ root.render(
         <Route path="/Discover" element={<Discover />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Form" element={<Form/>} />
+        <Route path="/Form" element={<Form />} />
       </Routes>
     </AuthContextProvider>
   </BrowserRouter>
