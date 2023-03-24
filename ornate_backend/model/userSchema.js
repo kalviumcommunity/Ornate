@@ -5,26 +5,35 @@ const validator = require("validator");
 
 const userSchema = new mongoose.Schema({
   //
+  name: {
+    type: String,
+    required: true,
+  },
   email: {
-    type: "string",
+    type: String,
     required: true,
     unique: true,
   },
   password: {
-    type: "string",
+    type: String,
     required: true,
   },
-  //   confirmpassword: {
-  //     type: "string",
-  //     required: true,
-  //   },
+  confirmpassword: {
+    type: String,
+    required: true,
+  },
 });
 
 // static register method
 
-userSchema.statics.register = async function (email, password) {
+userSchema.statics.register = async function (
+  name,
+  email,
+  password,
+  confirmpassword
+) {
   // Validation
-  if (!email || !password) {
+  if (!name || !email || !password || !confirmpassword) {
     throw Error("All the feilds must be filled.");
   }
   if (!validator.isEmail(email)) {
@@ -42,8 +51,14 @@ userSchema.statics.register = async function (email, password) {
   const salt = await bcrypt.genSalt(10);
 
   const hash = await bcrypt.hash(password, salt);
+  const chash = await bcrypt.hash(confirmpassword, salt);
 
-  const user = await this.create({ email, password: hash });
+  const user = await this.create({
+    name,
+    email,
+    password: hash,
+    confirmpassword: chash,
+  });
 
   return user;
 };
@@ -58,14 +73,13 @@ userSchema.statics.login = async function (email, password) {
   if (!user) {
     throw Error("Incorrect Email");
   }
-  const match = await bcrypt.compare(password, user.password)
+  const match = await bcrypt.compare(password, user.password);
 
   if (!match) {
-    throw Error('Incorrect password')
+    throw Error("Incorrect password");
   }
-    
-  return user
-}
 
+  return user;
+};
 
 module.exports = mongoose.model("User", userSchema);

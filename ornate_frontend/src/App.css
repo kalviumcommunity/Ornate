@@ -11,6 +11,7 @@
 
 body {
   background-color: var(--white-color);
+  overflow-x: hidden;
 }
 
 :root{
@@ -18,6 +19,11 @@ body {
   --white-color : white;
   --purple-color : rgb(44, 46, 173);
 }
+
+button {
+  cursor: pointer;
+}
+
 
 /* HOME PAGE STYLING */
 /* SIGN UP BUTTON */
@@ -239,7 +245,6 @@ body {
   top: 0;
   z-index: -1;
   filter: brightness(0.4);
-  mix-blend-mode: hard-light;
   width: 100%;
 }
 
@@ -334,16 +339,161 @@ body {
 
 /*FORM STYLING */
 .user_page{
-  /* align-items: center;
-  justify-content: center; */
-  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
   width: 100%;
   height: 100vh;
-  background-color: aqua;
+    background: linear-gradient(270deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
+
+  /* background-color: aqua;  */
 }
 .pop{
-  /* background-color: aliceblue; */
+  background-color: white;
   width: 60%;
-  height: 60vh;
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
 
+}
+.form_img{
+  height: 100vh;
+}
+
+.potrayal{
+  width: 60%;
+  background-color: black;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #030128;
+}
+
+#section_top{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+
+#back_arrow {
+  height: fit-content;
+  position: relative;
+  margin-top: 15px;
+}
+
+#back_arrow svg {
+  background: linear-gradient(270deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
+  border-radius: 25px;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.2s;
+}
+
+#back_arrow:hover svg{
+  background: linear-gradient(0deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
+  scale: 1.2;
+}
+
+#logo_section{
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_logo{
+  height: 80%;
+}
+
+#section_below{
+  width: 100%;
+  height: 75%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+
+
+}
+.potray_image{
+  width: 100%;
+  /* height: 100%; */
+  /* width:auto; */
+}
+
+/* Form section styling */
+.form_section{
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  width: 40%;
+}
+
+#register{
+    color: rgb(70, 71, 74);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+    font-size: 2em
+
+}
+
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+.mainLoginInput{
+  height: 30px;
+  width: 20vw;
+  padding: 5px;
+  font-size: 1em;
+  /* margin: 5px 0; */
+  color: black;
+  /* gap: 15px; */
+  margin-top: 15px;
+  /* margin-bottom: 10px; */
+}
+
+.mainLoginInput::placeholder { 
+font-family: FontAwesome;
+width: 15%;
+font-weight: lighter;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+font-size: 1em;
+
+color: var(--black-color);
+}
+
+.name_input{
+  height: 50px;
+}
+
+
+#user_act{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.register_button{
+    width: 20vw;
+    margin-top: 20px;
+}
+
+.error {
+  margin-top: 10px;
+  font-size: 0.9em;
+  border-radius: 1vh;
+  padding: 4px;
+  color: red;
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.2);
+  border: 1px solid red;
 }

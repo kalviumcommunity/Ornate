@@ -116,7 +116,6 @@ const SignUp = () => {
                     Login
                   </button>
                 </div>
-                {/* </div> */}
               </Form>
             )}
           </Formik>

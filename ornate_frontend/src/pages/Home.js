@@ -14,6 +14,7 @@ import Card from "../Images/card.png";
 import "../App.css";
 import { BsFillChatLeftTextFill } from "react-icons/bs";
 
+// Data Array
 const data = [
   {
     image: Card,
@@ -82,6 +83,7 @@ const Home = () => {
         </h1>
         <h1>BUSINESS</h1>
 
+        {/* Social Media links Section */}
         <div id="icon_div">
           <a href="https://www.instagram.com/?utm_source=pwa_homescreen">
             <img src={Instagram} className="logos" alt="" />
@@ -99,8 +101,6 @@ const Home = () => {
             <img src={Github} className="logos" alt="" />
           </a>
         </div>
-        {/* <div id="content_divison"></div>
-         */}
         <button className="chat_button">
           <BsFillChatLeftTextFill />
           Join Community Chat

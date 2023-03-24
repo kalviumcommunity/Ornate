@@ -11,6 +11,37 @@ import advertising from "../../Images/advertising.png";
 import "./Classification.css";
 
 const Classification = () => {
+  const data = [
+    {
+      title: "Photography",
+      image: photography,
+    },
+    {
+      title: "Architecture",
+      image: architecture,
+    },
+    {
+      title: "Advertisement",
+      image: advertising,
+    },
+    {
+      title: "Fashion",
+      image: fashion,
+    },
+    {
+      title: "UI/UX",
+      image: uiux,
+    },
+    {
+      title: "Sketching",
+      image: sketching,
+    },
+    {
+      title: "Illustrations",
+      image: illustrations,
+    },
+  ];
+
   return (
     // Claasification Section which acts as a Filter Section for sorting images.
 
@@ -19,90 +50,24 @@ const Classification = () => {
       {/* Different Sections Description */}
 
       {/* Photography Section */}
-      <div className="classes">
-        {/* Image */}
-        <img
-          src={photography}
-          alt="photography"
-          className="display_class_image"
-        />
-        {/* Overlay */}
-        <div className="overlay">
-          <div className="text">Photography</div>
-        </div>
-      </div>
-
-      {/* Architecture Section */}
-      <div className="classes">
-        {/* Image */}
-        <img
-          src={architecture}
-          alt="architecture"
-          className="display_class_image"
-        />
-        {/* Overlay */}
-        <div className="overlay">
-          <div className="text">Architecture</div>
-        </div>
-      </div>
-
-      {/* Advertising Section */}
-      <div className="classes">
-        {/* Image */}
-        <img
-          src={advertising}
-          alt="advertising"
-          className="display_class_image"
-        />
-        {/* Overlay */}
-        <div className="overlay">
-          <div className="text">Advertisment</div>
-        </div>
-      </div>
-
-      {/* Fashion Section */}
-      <div className="classes">
-        {/* Image */}
-        <img src={fashion} alt="Fashion" className="display_class_image" />
-        {/* Overlay */}
-        <div className="overlay">
-          <div className="text">Fashion</div>
-        </div>
-      </div>
-
-      {/* UI/UX Section */}
-      <div className="classes">
-        {/* Image */}
-        <img src={uiux} alt="UI/UX" className="display_class_image" />
-        {/* Overlay */}
-        <div className="overlay">
-          <div className="text">UI/UX</div>
-        </div>
-      </div>
-
-      {/* Sketching Section */}
-      <div className="classes">
-        {/* Image */}
-        <img src={sketching} alt="Sketching" className="display_class_image" />
-        {/* Overlay */}
-        <div className="overlay">
-          <div className="text">Sketching</div>
-        </div>
-      </div>
-
-      {/* Illustrations Section */}
-      <div className="classes">
-        {/* Image */}
-        <img
-          src={illustrations}
-          alt="Illustrations"
-          className="display_class_image"
-        />
-        {/* Overlay */}
-        <div className="overlay">
-          <div className="text">Illustrations</div>
-        </div>
-      </div>
+      {data.map((e, i) => {
+        const style = {
+          main: {
+            content: e.title,
+          },
+        };
+        return (
+          <div className="classes" key={i} style={style.main}>
+            {/* Image */}
+            <img
+              src={e.image}
+              alt="photography"
+              className="display_class_image"
+            />
+            <p>{e.title}</p>
+          </div>
+        );
+      })}
     </div>
   );
 };
