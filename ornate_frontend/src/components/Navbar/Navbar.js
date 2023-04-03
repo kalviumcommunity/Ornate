@@ -9,6 +9,8 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 const Navbar = () => {
   const navigate = useNavigate();
   const { logout } = useLogout();
+
+  // Getting User fronn local storage
   const { user } = useAuthContext();
 
   const handleClick = () => {
@@ -18,6 +20,8 @@ const Navbar = () => {
   return (
     // NAVBAR ELEMENT
     <nav id="navbar">
+
+
       {/* Logo Divison */}
       <div id="logo">
         <Link to="/" className="">
@@ -39,6 +43,8 @@ const Navbar = () => {
             </Link>
           </div>
 
+          
+          {/* Returning different divison depending in weather there is user or not */}
           {user && (
             <div className="elements">
               <span>{user.email}</span>
@@ -59,23 +65,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-
-      {/* Search Button Divison */}
-      {/* <div id="search_section"> */}
-      {/* <input
-          type="text"
-          name=""
-          
-          placeholder=" Search Design..."
-          id="search_box"
-        /> */}
-      {/* <input
-          class="mainLoginInput"
-          type="text"
-          placeholder="&#61442; Search Designs"
-          id="search_box"
-        /> */}
-      {/* </div> */}
     </nav>
   );
 };

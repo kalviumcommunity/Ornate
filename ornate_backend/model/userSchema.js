@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const validator = require("validator");
 
 const userSchema = new mongoose.Schema({
-  //
   name: {
     type: String,
     required: true,
@@ -36,12 +35,17 @@ userSchema.statics.register = async function (
   if (!name || !email || !password || !confirmpassword) {
     throw Error("All the feilds must be filled.");
   }
+
+  // Valditing if the entered string is an email or not
   if (!validator.isEmail(email)) {
     throw Error("Email is not valid");
   }
+  // Validating if the password enetered is a strong password or not
   if (!validator.isStrongPassword(password)) {
     throw Error("Password not strong enough");
   }
+
+  // Checking if the enetered email already exist or not 
   const exists = await this.findOne({ email });
   if (exists) {
     throw Error("Email already registered");
@@ -49,10 +53,12 @@ userSchema.statics.register = async function (
 
   //  Hashing
   const salt = await bcrypt.genSalt(10);
-
+  // password
   const hash = await bcrypt.hash(password, salt);
+  // Confirm Password
   const chash = await bcrypt.hash(confirmpassword, salt);
 
+  // Creating a new user with the stated schema
   const user = await this.create({
     name,
     email,

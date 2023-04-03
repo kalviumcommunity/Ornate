@@ -1,5 +1,6 @@
-const User = require("../model/userSchema");
+// Handling user requests and responses
 
+const User = require("../model/userSchema");
 const jwt = require("jsonwebtoken");
 
 const createToken = (_id) => {

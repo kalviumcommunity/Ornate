@@ -497,3 +497,31 @@ color: var(--black-color);
   background-color: rgba(255, 0, 0, 0.2);
   border: 1px solid red;
 }
+
+
+
+/* UPLOAD FORM STYLING */
+.upload_page{
+  height: 80%;
+  width: 70%;
+  background-color: azure;
+  display: flex;
+  flex-direction: row;
+}
+
+.user{
+  width: 30%;
+  height: 100%;
+  background-color:aqua;
+  display: flex/9+8;
+  align-items: baseline;
+}
+.upload_image{
+  width: 100%;
+}
+
+.upload_action{
+width: 70%;
+background-color: aquamarine;
+height: 100%;
+} 

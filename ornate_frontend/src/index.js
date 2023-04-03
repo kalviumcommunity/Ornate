@@ -8,9 +8,10 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Form from "./pages/Form";
+import Upload from "./pages/Upload";
+import Profile from "./pages/Profile";
 
 import { AuthContextProvider } from "./context/AuthContext";
-// import { Formik } from "formik";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,11 +19,13 @@ root.render(
     <AuthContextProvider>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/Discover" element={<Discover />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Form" element={<Form />} />
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/discover" element={<Discover />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </AuthContextProvider>
   </BrowserRouter>
