@@ -1,8 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import "./Tagline.css";
-import mainImage from "../../Images/mainillustration.jpg";
-import SignUp from "../../pages/SignUp";
 
 const Tagline = () => {
   // const handleSubmit = (e) => {
