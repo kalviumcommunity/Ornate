@@ -4,27 +4,30 @@ const bcrypt = require("bcrypt");
 const validator = require("validator");
 
 const userSchema = new mongoose.Schema({
-  //
+  username: {
+    type: String,
+    required: true
+  },
   email: {
-    type: "string",
+    type: String,
     required: true,
     unique: true,
   },
   password: {
-    type: "string",
+    type: String,
     required: true,
   },
-  //   confirmpassword: {
-  //     type: "string",
-  //     required: true,
-  //   },
+    confirmpassword: {
+      type: String,
+      required: true,
+    },
 });
 
 // static register method
 
 userSchema.statics.register = async function (email, password) {
   // Validation
-  if (!email || !password) {
+  if (!username || !email || !password || !confirmpassword) {
     throw Error("All the feilds must be filled.");
   }
   if (!validator.isEmail(email)) {
@@ -42,8 +45,9 @@ userSchema.statics.register = async function (email, password) {
   const salt = await bcrypt.genSalt(10);
 
   const hash = await bcrypt.hash(password, salt);
+  const chash = await bcrypt.hash(confirmpassword, salt);
 
-  const user = await this.create({ email, password: hash });
+  const user = await this.create({ email, password: hash, confirmpassword: chash });
 
   return user;
 };
