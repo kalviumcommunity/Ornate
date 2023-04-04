@@ -2,12 +2,19 @@ import React from "react";
 import "./Navbar.css";
 import "../../App.css";
 import logoImg from "../../Images/logon.png";
-import { Link } from "react-router-dom";
-// import back from "../../Images/Rectangle-1.svg";
-// import { BiSun } from "react-icons/bi";
-// import { BiSearchAlt } from "react-icons/bi";
+import { Link, useNavigate } from "react-router-dom";
+import { useLogout } from "../../hooks/useLogout";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  const { logout } = useLogout()
+  const { user } = useAuthContext()
+
+  const handleClick = () => {
+    logout()
+  }
+
   return (
     // NAVBAR ELEMENT
     <nav id="navbar">
@@ -31,56 +38,27 @@ const Navbar = () => {
               Discover
             </Link>
           </div>
-          {/* <div className="elements">
-            <Link to="/Login" className="link_text">
-              Login
-            </Link>
-          </div> */}
-          <div>
-            <button
-              className="upload_button gradient_button"
-              style={{ width: "9vw" }}
-            >
-              <Link to="/Form">Register</Link>
-            </button>
-          </div>
+
+          {user && (
+            <div className="elements">
+              <span>{user.email}</span>
+              <button onClick={handleClick}>Logout</button>
+            </div>
+          )}
+
+          {!user && (
+            <div>
+              <button
+                className="upload_button gradient_button"
+                style={{ width: "9vw" }}
+                onClick={() => navigate("/Form")}
+              >
+                Register
+              </button>
+            </div>
+          )}
         </div>
       </div>
-
-      {/* Search Button Divison */}
-      {/* <div id="search_section"> */}
-      {/* <input
-          type="text"
-          name=""
-          
-          placeholder=" Search Design..."
-          id="search_box"
-        /> */}
-      {/* <input
-          class="mainLoginInput"
-          type="text"
-          placeholder="&#61442; Search Designs"
-          id="search_box"
-        /> */}
-      {/* </div> */}
-
-      {/* Backdrop divison */}
-      {/* <div>
-        <img src={back} alt="" id="back-image" />
-      </div>
-
-      <div>
-        <button></button>
-      </div> */}
-
-      {/* Sign up/ Log In Divison */}
-      {/* <div id="user_action">
-        <Link to="/SignUp" id="signup">
-          <button id="signup_button">Sign up</button>
-        </Link>
-        &nbsp;
-        <Link id="login">Log In</Link>
-      </div> */}
     </nav>
   );
 };

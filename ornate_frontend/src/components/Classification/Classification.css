@@ -17,6 +17,42 @@
   /* flex-direction: row; */
   position: relative;
   justify-content: center;
+  align-items: center;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.classes p {
+  display: none;
+  position: absolute;
+  font-size: 1.2em;
+}
+
+.classes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 9px;
+  width: 90%;
+  height: 100%;
+  border-radius: 25vh;
+  background: linear-gradient(90deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
+  transform: scaleX(0);
+  opacity: 0;
+  transition: .5s;
+}
+
+.classes:hover .display_class_image{
+  opacity: 0.2;
+}
+
+.classes:hover p{
+  display: block;
+}
+
+.classes:hover::before {
+    transform: scaleX(1);
+    opacity: 1;
 }
 
 .display_class_image{
@@ -25,34 +61,6 @@
   display: block;
   transition: .5s ease;
   backface-visibility: hidden;
-}
-
-.overlay{
-  position: absolute;
-  top: 5.5vh;
-  bottom: 0;
-  left: 7vw;
-  right:0;
-  height: 10.9vh;
-  width: 13vw;
-  opacity: 0;
-  transition: .5s ease;
-  background: linear-gradient(90deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  /* color: grey; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 65vh;
-}
-
-.classes:hover .display_class_image {
-  opacity: 0.5;
-}
-
-.classes:hover .overlay {
-  opacity:1;
 }
 
 .text {
