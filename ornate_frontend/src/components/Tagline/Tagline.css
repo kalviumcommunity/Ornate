@@ -14,67 +14,14 @@
 }
 
 /* sign in form divison */
-#signIn{
-    width: 40%;
-    height: 50vh;
-    margin-top: 8vh;
-    border-radius: 1.3vh;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    /* background: url(../../Images/889.jpg);
-    background-size: cover; */
+#signIn {
+  height: 100%;
 }
 
-/* form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    gap: 10px;
-} */
-
-#register{
-    color: rgb(70, 71, 74);
-    width: auto;
-    display: flex;
-    justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    align-items: center;
-
-}
-
-/* Input fields styling */
-
-@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
-
-.mainLoginInput{
-  height: 30px;
-  width: 20vw;
-  padding: 5px;
-  font-size: 1em;
-  /* margin: 5px 0; */
-  color: black;
-  /* gap: 15px; */
-  margin-top: 5px;
-  /* margin-bottom: 10px; */
-}
-
-.mainLoginInput::placeholder { 
-font-family: FontAwesome;
-width: 15%;
-font-weight: lighter;
-overflow: visible;
-vertical-align: top;
-display: inline-block !important;
-font-size: 1em;
-
-color: var(--black-color);
-}
-
-.name_input{
-    height: 30px;
+#signIn img {
+  mix-blend-mode: hard-light;
+  filter: hue-rotate(240deg);
+  /* align-self: baseline; */
 }
 
 /* Main divison for Tagline */
@@ -117,9 +64,14 @@ color: var(--black-color);
     background: linear-gradient(270deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
 }
 
-.register_button{
+.transmit_button{
+    font-size: 1em;
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
     width: 20vw;
-    margin-top: 2px;
+    border-radius: 10vh;
 }
 
 .login_div{
