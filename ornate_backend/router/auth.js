@@ -1,15 +1,13 @@
 const express = require("express");
 
-const router = express.Router();
+// const requireAuth = require("../middleware/requireAuth");
 
 require("../DB/conn");
-const User = require("../model/userSchema");
+// const User = require("../model/userSchema");
+const router = express.Router(); 
 
 const { registerUser, loginUser } = require("../controller/userController");
-
-router.get("/", (req, res) => {
-  res.status(200).send(`hello server`);
-});
+// router.use(requireAuth);
 
 router.post("/register", registerUser);
 

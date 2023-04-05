@@ -21,7 +21,7 @@ const Form = () => {
         {/* Illustration Side of Form */}
         <div className="potrayal">
           <div id="section_top">
-            <div id="back_arrow">
+            <div className="back_arrow">
               <BsFillArrowLeftSquareFill
                 onClick={() => navigate("/")}
                 fontSize="3em"

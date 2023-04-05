@@ -21,19 +21,15 @@
 #signIn img {
   mix-blend-mode: hard-light;
   filter: hue-rotate(240deg);
-  /* align-self: baseline; */
 }
 
 /* Main divison for Tagline */
 #tagline{
     width: 65%;
-    /* height:66vh; */
-    /* display: flex; */
+    /* height: 50vh; */
     margin-left: 5vh;
-        margin-top: 6vh;
-
+    margin-top: 6vh;
     color: var(--white-color);
-    /* display: flex; */
 }
 
 .chat_button {

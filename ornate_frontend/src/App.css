@@ -373,13 +373,13 @@ button {
 }
 
 
-#back_arrow {
+.back_arrow {
   height: fit-content;
   position: relative;
   margin-top: 15px;
 }
 
-#back_arrow svg {
+.back_arrow svg {
   background: linear-gradient(270deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
   border-radius: 25px;
   cursor: pointer;
@@ -387,7 +387,7 @@ button {
   transition: all 0.2s;
 }
 
-#back_arrow:hover svg{
+.back_arrow:hover svg{
   background: linear-gradient(0deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
   scale: 1.2;
 }
@@ -414,8 +414,6 @@ button {
 }
 .potray_image{
   width: 100%;
-  /* height: 100%; */
-  /* width:auto; */
 }
 
 /* Form section styling */
@@ -444,11 +442,8 @@ button {
   width: 20vw;
   padding: 5px;
   font-size: 1em;
-  /* margin: 5px 0; */
   color: black;
-  /* gap: 15px; */
   margin-top: 15px;
-  /* margin-bottom: 10px; */
 }
 
 .mainLoginInput::placeholder { 
@@ -492,3 +487,111 @@ color: var(--black-color);
   background-color: rgba(255, 0, 0, 0.2);
   border: 1px solid red;
 }
+
+/* UPLOAD FORM STYLING */
+.upload_page{
+  height: 80%;
+  width: 75%;
+  background-color: white;
+  border-radius: 2vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.up_title{
+  width: 100%;
+  height: 15%;
+  margin-left:5vh;
+  display: flex;
+  flex-direction:row ;
+}
+
+.up_title h1{
+  color: black;
+  font-size: 3.5em;
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: bolder;
+  display: flex;
+  right: 15px;
+}
+
+#user_actions{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 85%;
+
+}
+
+.user{
+  width: 60%;
+  height: 100%;
+  display: flex/9+8;
+  align-items: baseline;
+}
+
+.upload_display{
+width: 35%;
+background-color: white;
+height: 100%;
+display: flex;
+align-items: end;
+
+} 
+
+.upload_bg{
+  width: 100%;
+}
+
+.back_arrow2 {
+  height: fit-content;
+  position: relative;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.back_arrow2 svg {
+  background: linear-gradient(270deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+
+.back_arrow2:hover svg{
+  background: linear-gradient(0deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
+  scale: 1.2;
+}
+
+.upd_inpt_div{
+  position: relative;
+  margin: 20px 0 ;
+}
+
+
+.label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: black;
+  padding: 0 5px;
+  pointer-events: none;
+  font-weight: bold;
+
+}
+
+.upd_inp{
+  width: 320px;
+  height: 40px;
+  font-size: 2em;
+  color: black;
+  padding:  0 10px;
+  background: transparent;
+  border: 1.2px solid black;
+  outline: none;
+  border-radius: 5px;
+}
+
+.upd_inp :focus~
