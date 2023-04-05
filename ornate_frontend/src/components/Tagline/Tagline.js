@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import "./Tagline.css";
 import { BsArrowRight } from "react-icons/bs";
 
@@ -10,6 +9,7 @@ const Tagline = () => {
 
   return (
     <div id="content">
+
       {/* Taglone of the divison */}
       <div id="tagline">
         <div id="line_one">Let's turn it to</div>
@@ -20,10 +20,8 @@ const Tagline = () => {
         </button>
       </div>
 
-      {/* sign in divison */}
+      {/* Main image */}
       <div id="signIn">
-        {/* <SignUp /> */}
-        {/* <img src={mainImage} alt="" style={{ height: "400px" }} /> */}
         <img
           src="https://img.freepik.com/premium-photo/interface-designer-flat-illustration_250484-3247.jpg?size=626&ext=jpg&ga=GA1.1.542337575.1679558435&semt=ais"
           alt=""

@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
 
 // static register method
 
-userSchema.statics.register = async function (email, password) {
+userSchema.statics.register = async function (username, email, password, confirmpassword) {
   // Validation
   if (!username || !email || !password || !confirmpassword) {
     throw Error("All the feilds must be filled.");
@@ -47,7 +47,7 @@ userSchema.statics.register = async function (email, password) {
   const hash = await bcrypt.hash(password, salt);
   const chash = await bcrypt.hash(confirmpassword, salt);
 
-  const user = await this.create({ email, password: hash, confirmpassword: chash });
+  const user = await this.create({ username, email, password: hash, confirmpassword: chash });
 
   return user;
 };
