@@ -1,11 +1,13 @@
 import React from "react";
 import "./Tagline.css";
 import { BsArrowRight } from "react-icons/bs";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Tagline = () => {
   // const handleSubmit = (e) => {
   //   e.preventDefault();
   // };
+  const navigate = useNavigate()
 
   return (
     <div id="content">
@@ -14,7 +16,8 @@ const Tagline = () => {
       <div id="tagline">
         <div id="line_one">Let's turn it to</div>
         <div id="line_two">Extraordinary</div>
-        <button className="transmit_button gradient_button ">
+        <button className="transmit_button gradient_button " onClick={() => navigate("/upload")}
+>
           Upload Your Designs
           <BsArrowRight style={{ marginLeft: "12px", scale: "1.3" }} />
         </button>

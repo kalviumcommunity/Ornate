@@ -11,7 +11,7 @@ const Register = ({ handleClick }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+    console.log(name,email);
     await register(name, email, password, confirmpassword);
   };
   return (

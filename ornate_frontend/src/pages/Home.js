@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Classification from "../components/Classification/Classification";
 import Tagline from "../components/Tagline/Tagline";

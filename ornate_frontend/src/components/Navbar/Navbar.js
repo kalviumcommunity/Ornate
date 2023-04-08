@@ -7,13 +7,14 @@ import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Navbar = () => {
-  const navigate = useNavigate()
-  const { logout } = useLogout()
-  const { user } = useAuthContext()
+  const navigate = useNavigate();
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
 
   const handleClick = () => {
-    logout()
-  }
+    logout();
+    navigate("/");
+  };
 
   return (
     // NAVBAR ELEMENT
@@ -42,7 +43,18 @@ const Navbar = () => {
           {user && (
             <div className="elements">
               <span>{user.email}</span>
-              <button onClick={handleClick}>Logout</button>
+              <button
+                className="upload_button gradient_button"
+                onClick={() => navigate("/Profile ")}
+              >
+                Profile
+              </button>
+              <button
+                className="upload_button gradient_button"
+                onClick={handleClick}
+              >
+                Logout
+              </button>
             </div>
           )}
 
