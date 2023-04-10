@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
+
 import Classification from "../components/Classification/Classification";
 import Tagline from "../components/Tagline/Tagline";
 import bgImg from "../Images/background.jpg";
@@ -12,6 +13,7 @@ import { CiSaveDown2 } from "react-icons/ci";
 import Card from "../Images/card.png";
 import "../App.css";
 import { BsFillChatLeftTextFill } from "react-icons/bs";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -62,6 +64,7 @@ const data = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div id="main">
       <Navbar />
@@ -109,7 +112,12 @@ const Home = () => {
         <div className="list_header">
           <h1>Explore Distinctions</h1>
           <span>
-            <button className="upload_button gradient_button">
+            <button
+              className="upload_button gradient_button"
+              onClick={() => {
+                navigate("/form");
+              }}
+            >
               Join Community
             </button>
           </span>
@@ -117,11 +125,12 @@ const Home = () => {
 
         <Classification />
         <div id="image_content">
-          <div id="filter_section">
+          {/* SEARCH SECTION DIVISON */}
+          {/* <div id="filter_section">
             <form>
               <input type="text" />
             </form>
-          </div>
+          </div> */}
           <div id="content_section">
             <div>
               <div className="card-container">
@@ -133,18 +142,18 @@ const Home = () => {
                       {/* Image */}
                       <img src={Card} alt="card" className="display_class" />
                       {/* overlay on hovering */}
-                        <div className="user_actions">
-                          <div id="like_section">
-                            <button className="like_button">
-                              <FcLike className="like" />
-                            </button>
-                          </div>
-                          <div id="save_section">
-                            <button className="save_button">
-                              Save <CiSaveDown2 fill="black" />
-                            </button>
-                          </div>
+                      <div className="user_actions">
+                        <div id="like_section">
+                          <button className="like_button">
+                            <FcLike className="like" />
+                          </button>
                         </div>
+                        <div id="save_section">
+                          <button className="save_button">
+                            Save <CiSaveDown2 fill="black" />
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}

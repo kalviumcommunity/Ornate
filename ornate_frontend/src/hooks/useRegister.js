@@ -6,7 +6,7 @@ export const useRegister = () => {
   const [isLoading, setIsLoading] = useState(null);
   const { dispatch } = useAuthContext();
 
-  const register = async (name, email, password, confirmpassword) => {
+  const register = async (username, email, password, confirmpassword) => {
     setIsLoading(true);
     setError(null);
 
@@ -15,7 +15,7 @@ export const useRegister = () => {
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password, confirmpassword }),
+        body: JSON.stringify({ username, email, password, confirmpassword }),
       }
     );
     const json = await response.json();
@@ -25,7 +25,7 @@ export const useRegister = () => {
     }
     if (response.ok) {
       // Saving user to local storage
-      localStorage.setItem("user", JSON.stringify(json));
+      sessionStorage.setItem("user", JSON.stringify(json));
 
       // Updating Auth context
       dispatch({ type: "LOGIN", payload: json });
