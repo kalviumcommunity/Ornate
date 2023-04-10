@@ -14,8 +14,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/discover" element={<Discover />} />
         <Route path="/form" element={user ? <Home /> : <Form />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/upload" element={user ? <Upload /> : <Form />} />
+        <Route path="/profile" element={user ? <Profile /> : <Form />} />
       </Routes>
     </BrowserRouter>
   );

@@ -22,9 +22,9 @@ const Navbar = () => {
     <nav id="navbar">
       {/* Logo Divison */}
       <div id="logo">
-        <Link to="/" className="">
+        <div to="/" className="">
           <img src={logoImg} alt="site logo" className="logo" />
-        </Link>
+        </div>
       </div>
 
       {/* Quick Links Divison */}
@@ -36,9 +36,9 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="elements">
-            <Link to="/Discover" className="link_text">
+            <a href="/#design_list" className="link_text">
               Discover
-            </Link>
+            </a>
           </div>
 
           {user && (
