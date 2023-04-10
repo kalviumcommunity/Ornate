@@ -1,13 +1,14 @@
 import React from "react";
 import "../App.css";
-import uploadBg from '../Images/uploadbg.png'
-import TextField from "@mui/material/TextField"
+import uploadBg from "../Images/uploadbg.png";
+import TextField from "@mui/material/TextField";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import { Navigate, useNavigate } from "react-router-dom";
-
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Upload = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { user } = useAuthContext();
   return (
     <div className="user_page">
       <div className="upload_page">
@@ -70,7 +71,7 @@ const Upload = () => {
           <div className="upload_display">
             <div className="prnt_cnt">
               <div className="upd_cont">
-                Hey Priyanshi,
+                Hey {user.email},
                 <br />
                 Welcome to Ornate. We are excited to have you join our community
                 and share your unique designs with the world.

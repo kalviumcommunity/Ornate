@@ -775,3 +775,10 @@ color: var(--black-color);
     border-radius: 5px;
 
 }
+
+
+/* LOGOUT BUTTON STYLING */
+#logout_btn{
+  font-weight: bold;
+
+}

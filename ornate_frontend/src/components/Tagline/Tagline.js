@@ -2,25 +2,39 @@ import React from "react";
 import "./Tagline.css";
 import { BsArrowRight } from "react-icons/bs";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Tagline = () => {
   // const handleSubmit = (e) => {
   //   e.preventDefault();
   // };
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
+  const { user } = useAuthContext();
   return (
     <div id="content">
-
       {/* Taglone of the divison */}
       <div id="tagline">
         <div id="line_one">Let's turn it to</div>
         <div id="line_two">Extraordinary</div>
-        <button className="transmit_button gradient_button " onClick={() => navigate("/upload")}
->
-          Upload Your Designs
-          <BsArrowRight style={{ marginLeft: "12px", scale: "1.3" }} />
-        </button>
+
+        {user && (
+          <button
+            className="transmit_button gradient_button "
+            onClick={() => navigate("/upload")}
+          >
+            Upload Your Designs
+            <BsArrowRight style={{ marginLeft: "12px", scale: "1.3" }} />
+          </button>
+        )}
+        {!user && (
+          <button
+            className="transmit_button gradient_button "
+            onClick={() => navigate("/form")}
+          >
+            Upload Your Designs
+            <BsArrowRight style={{ marginLeft: "12px", scale: "1.3" }} />
+          </button>
+        )}
       </div>
 
       {/* Main image */}

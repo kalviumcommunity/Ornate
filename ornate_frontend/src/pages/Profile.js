@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar/Navbar";
 import { Navigate, useNavigate } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import post from "../Images/uploadbg.png";
+import { useAuthContext } from "../hooks/useAuthContext";
+
 const posts = [
   { image: post },
   { image: post },
@@ -13,6 +15,7 @@ const posts = [
 
 const Profile = () => {
   const navigate = useNavigate();
+  const { user } = useAuthContext();
   return (
     <div className="profile_page">
       {/* Navbar of the Profile Page */}
@@ -25,12 +28,10 @@ const Profile = () => {
         <div className="left_pannel">
           {/* User Details Section */}
           <div className="per_details">
-            <h1>Hey Priyanshi Rana,</h1>
-
+            <h1>Hey ,</h1>
             <h3>Date of Birth : 09 November 2004</h3>
-            <h3>Email-Id : priyanshirana78@gmail.com</h3>
+            <h3>Email-Id :{user.email}</h3>
             <h3>Contact : 0123456789</h3>
-
             <div id="upload_btn">
               <button
                 className="transmit_button gradient_button "
