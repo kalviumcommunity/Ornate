@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 
 import Classification from "../components/Classification/Classification";
@@ -14,6 +14,8 @@ import Card from "../Images/card.png";
 import "../App.css";
 import { BsFillChatLeftTextFill } from "react-icons/bs";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useUploadContext } from "../hooks/useUploadContext";
 
 const data = [
   {
@@ -65,6 +67,29 @@ const data = [
 
 const Home = () => {
   const navigate = useNavigate();
+  const { user } = useAuthContext();
+  const { uploads, dispatch } = useUploadContext();
+
+  useEffect(() => {
+    const displayUploads = async () => {
+      const resp = await fetch(`${process.env.REACT_APP_API}/api/posts/`, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+
+      const json = await resp.json();
+
+      if (resp.ok) {
+        dispatch({ type: "UPLOAD", payload: json });
+      }
+    };
+
+    if (user) {
+      displayUploads();
+    }
+  }, [dispatch, user]);
+
   return (
     <div id="main">
       <Navbar />
@@ -101,62 +126,71 @@ const Home = () => {
             <img src={Github} className="logos" alt="" />
           </a>
         </div>
-        {/* <div id="content_divison"></div>
-         */}
-        <button className="chat_button">
-          <BsFillChatLeftTextFill />
-          Join Community Chat
-        </button>
       </div>
       <div id="design_list">
         <div className="list_header">
           <h1>Explore Distinctions</h1>
-          <span>
-            <button
-              className="upload_button gradient_button"
-              onClick={() => {
-                navigate("/form");
-              }}
-            >
-              Join Community
-            </button>
-          </span>
+
+          {user && (
+            <span>
+              <button
+                className="upload_button gradient_button"
+                onClick={() => {
+                  navigate("/upload");
+                }}
+              >
+                Upload your Design
+              </button>
+            </span>
+          )}
+          {!user && (
+            <span>
+              <button
+                className="upload_button gradient_button"
+                onClick={() => {
+                  navigate("/form");
+                }}
+              >
+                Join Community
+              </button>
+            </span>
+          )}
         </div>
 
         <Classification />
         <div id="image_content">
-          {/* SEARCH SECTION DIVISON */}
-          {/* <div id="filter_section">
-            <form>
-              <input type="text" />
-            </form>
-          </div> */}
           <div id="content_section">
             <div>
               <div className="card-container">
                 {/* Individual Card */}
 
-                {data.map(() => {
-                  return (
-                    <div className="cards">
-                      {/* Image */}
-                      <img src={Card} alt="card" className="display_class" />
-                      {/* overlay on hovering */}
-                      <div className="user_actions">
-                        <div id="like_section">
-                          <button className="like_button">
-                            <FcLike className="like" />
-                          </button>
-                        </div>
-                        <div id="save_section">
-                          <button className="save_button">
-                            Save <CiSaveDown2 fill="black" />
-                          </button>
+                {uploads &&
+                  uploads.map((e, i) => {
+                    return (
+                      <div className="cards" key={i}>
+                        {/* Image */}
+                        <img
+                          src={e.pic}
+                          alt="card"
+                          className="display_class"
+                          style={{ aspectRatio: "16/9" }}
+                        />
+                        {/* overlay on hovering */}
+                        <div className="user_actions">
+                          <div id="like_section">
+                            <button className="like_button">
+                              <FcLike className="like" />
+                            </button>
+                          </div>
+                          <div id="save_section">
+                            <button className="save_button">
+                              Save <CiSaveDown2 fill="black" />
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
               </div>
             </div>
           </div>

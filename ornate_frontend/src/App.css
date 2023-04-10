@@ -43,7 +43,6 @@ button {
   width: 35vh;
   height: 25vh;
   border-radius: 5px;
-  background-color: white;
   transition: all 0.5s;
 }
 
@@ -594,16 +593,12 @@ color: var(--black-color);
 
 .add_tag{
   width: 35vw;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  display: flex;
+
 }
 .tag_btn{
-  background-color: black;
-  color: white;
-  font-size: 0.9em;
-  border-radius: 5vh;
-  width: 8vw;
-  padding: 10px;
-  margin: 3px;
+  margin: 0 2px 0 15px;
 
 }
 

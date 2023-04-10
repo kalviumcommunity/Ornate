@@ -1,21 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css";
 import Navbar from "../components/Navbar/Navbar";
 import { Navigate, useNavigate } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import post from "../Images/uploadbg.png";
 import { useAuthContext } from "../hooks/useAuthContext";
-
-const posts = [
-  { image: post },
-  { image: post },
-  { image: post },
-  { image: post },
-];
+import { useUploadContext } from "../hooks/useUploadContext";
 
 const Profile = () => {
   const navigate = useNavigate();
   const { user } = useAuthContext();
+  const { uploads, dispatch } = useUploadContext();
+
+  useEffect(() => {
+    const displayUploads = async () => {
+      const resp = await fetch(
+        `${process.env.REACT_APP_API}/api/posts/userPosts`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+
+      const json = await resp.json();
+
+      if (resp.ok) {
+        dispatch({ type: "UPLOAD", payload: json });
+      }
+    };
+
+    if (user) {
+      displayUploads();
+    }
+  }, [dispatch, user]);
+
   return (
     <div className="profile_page">
       {/* Navbar of the Profile Page */}
@@ -28,7 +47,7 @@ const Profile = () => {
         <div className="left_pannel">
           {/* User Details Section */}
           <div className="per_details">
-            <h1>Hey ,</h1>
+            <h1>Hey {user?.username} ,</h1>
             <h3>Date of Birth : 09 November 2004</h3>
             <h3>Email-Id :{user.email}</h3>
             <h3>Contact : 0123456789</h3>
@@ -48,7 +67,6 @@ const Profile = () => {
           <img
             src="https://img.freepik.com/premium-vector/programming-software-concept-with-people-scene-vector-illustration_198565-2583.jpg?size=626&ext=jpg&uid=R96011200&ga=GA1.1.1069911503.1678599309&semt=ais"
             alt=""
-            srcset=""
           />
         </div>
 
@@ -57,14 +75,15 @@ const Profile = () => {
       <div id="per_posts">
         <h1>Your Collection ~</h1>
         <div className="posts">
-          {posts.map(() => {
-            return (
-              <div id="post_card">
-                <img src={post} alt="" />
-                <span>Albetos</span>
-              </div>
-            );
-          })}
+          {uploads &&
+            uploads.map((e, i) => {
+              return (
+                <div id="post_card" key={i}>
+                  <img src={e.pic} style={{ aspectRatio: "16/9" }} alt="" />
+                  <span>{e.title}</span>
+                </div>
+              );
+            })}
         </div>
       </div>
     </div>
