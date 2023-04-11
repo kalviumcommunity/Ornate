@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import "../App.css";
 import Navbar from "../components/Navbar/Navbar";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
-import post from "../Images/uploadbg.png";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useUploadContext } from "../hooks/useUploadContext";
+import { ImBin2 } from "react-icons/im";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -81,6 +81,9 @@ const Profile = () => {
                 <div id="post_card" key={i}>
                   <img src={e.pic} style={{ aspectRatio: "16/9" }} alt="" />
                   <span>{e.title}</span>
+                  <div id="upload_overlay">
+                    <ImBin2 />
+                  </div>
                 </div>
               );
             })}

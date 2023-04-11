@@ -10,60 +10,10 @@ import Linkedin from "../Images/LinkedIn.png";
 import Github from "../Images/GitHub.png";
 import { FcLike } from "react-icons/fc";
 import { CiSaveDown2 } from "react-icons/ci";
-import Card from "../Images/card.png";
 import "../App.css";
-import { BsFillChatLeftTextFill } from "react-icons/bs";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useUploadContext } from "../hooks/useUploadContext";
-
-const data = [
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-];
 
 const Home = () => {
   const navigate = useNavigate();
@@ -103,7 +53,7 @@ const Home = () => {
             {" "}
             Ornate is a design website which makes design search a blissful
             experience and a platform for budding artists to present their
-            designs. So, join the community today and Let's turn it to
+            designs. So, join the community today and let's turn it to
             Extraordinary.
           </span>{" "}
         </h1>

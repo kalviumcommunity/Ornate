@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import "../App.css";
 import uploadBg from "../Images/uploadbg.png";
-import TextField from "@mui/material/TextField";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useUploadContext } from "../hooks/useUploadContext";
 

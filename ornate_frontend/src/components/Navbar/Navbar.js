@@ -2,7 +2,6 @@ import React from "react";
 import "./Navbar.css";
 import "../../App.css";
 import logoImg from "../../Images/logon.png";
-import logoutimg from "../../Images/logout.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
@@ -43,9 +42,8 @@ const Navbar = () => {
 
           {user && (
             <div className="elements">
-              <span>{user.email}</span>
               <button
-                className="upload_button gradient_button"
+                className=" gradient_button profile_btn"
                 onClick={() => navigate("/Profile ")}
               >
                 Profile
