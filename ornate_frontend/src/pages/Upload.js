@@ -49,7 +49,7 @@ const Upload = () => {
       setPic("");
       setError(null);
       navigate("/profile");
-      dispatch({type : "POST", payload : json})
+      dispatch({ type: "POST", payload: json });
     }
   };
   // console.log(user.username);
@@ -95,10 +95,10 @@ const Upload = () => {
                 id="temp"
                 onChange={(e) => setPic(e.target.value)}
               />
-              <label className="label"> Image of Design</label>
+              <label className="label"> Link of your Design Image</label>
             </div>
             <div className="upd_inpt_div">
-              <p>Choose the Category of your Design</p>
+              <p className="label">Choose the Category of your Design</p>
             </div>
             <div className="add_tag" onChange={handleChange}>
               {/* Buttons for tags to be added with the images */}
@@ -109,7 +109,9 @@ const Upload = () => {
                 className="tag_btn"
                 value="Photography"
               />
-              <label htmlFor="r1">Photography</label>
+              <label htmlFor="r1" className="label_txt">
+                Photography
+              </label>
               <input
                 type="radio"
                 id="r2"
@@ -117,7 +119,9 @@ const Upload = () => {
                 className="tag_btn"
                 value="Architecture"
               />
-              <label htmlFor="r2">Architecture</label>
+              <label htmlFor="r2" className="label_txt">
+                Architecture
+              </label>
               <input
                 type="radio"
                 id="r3"
@@ -125,7 +129,9 @@ const Upload = () => {
                 className="tag_btn"
                 value="Advertisment"
               />
-              <label htmlFor="r3">Advertisment</label>
+              <label htmlFor="r3" className="label_txt">
+                Advertisment
+              </label>
               <input
                 type="radio"
                 id="r4"
@@ -133,7 +139,9 @@ const Upload = () => {
                 className="tag_btn"
                 value="Fashion"
               />
-              <label htmlFor="r4">Fashion</label>
+              <label htmlFor="r4" className="label_txt">
+                Fashion
+              </label>
               <input
                 type="radio"
                 id="r5"
@@ -141,7 +149,9 @@ const Upload = () => {
                 className="tag_btn"
                 value="UI/UX"
               />
-              <label htmlFor="r5">UI/UX</label>
+              <label htmlFor="r5" className="label_txt">
+                UI/UX
+              </label>
               <input
                 type="radio"
                 id="r6"
@@ -149,7 +159,9 @@ const Upload = () => {
                 className="tag_btn"
                 value="Sketching"
               />
-              <label htmlFor="r6">Sketching</label>
+              <label htmlFor="r6" className="label_txt">
+                Sketching
+              </label>
               <input
                 type="radio"
                 id="r7"
@@ -157,10 +169,12 @@ const Upload = () => {
                 className="tag_btn"
                 value="Illustration"
               />
-              <label htmlFor="r7">Illustration</label>
+              <label htmlFor="r7" className="label_txt">
+                Illustration
+              </label>
             </div>
 
-            {error && <div>{error}</div>}
+            {error && <div className="error">{error}</div>}
 
             {/* Upload Button Divison */}
             <div id="btn_div">

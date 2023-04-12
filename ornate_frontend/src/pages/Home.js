@@ -14,6 +14,7 @@ import "../App.css";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useUploadContext } from "../hooks/useUploadContext";
+import { BsCloudUpload } from "react-icons/bs";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -22,11 +23,7 @@ const Home = () => {
 
   useEffect(() => {
     const displayUploads = async () => {
-      const resp = await fetch(`${process.env.REACT_APP_API}/api/posts/`, {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      const resp = await fetch(`${process.env.REACT_APP_API}/api/posts/`);
 
       const json = await resp.json();
 
@@ -35,10 +32,8 @@ const Home = () => {
       }
     };
 
-    if (user) {
-      displayUploads();
-    }
-  }, [dispatch, user]);
+    displayUploads();
+  }, [dispatch]);
 
   return (
     <div id="main">
@@ -89,7 +84,8 @@ const Home = () => {
                   navigate("/upload");
                 }}
               >
-                Upload your Design
+                Upload your Design &nbsp;
+                <BsCloudUpload fontSize="1.25 rem" />
               </button>
             </span>
           )}

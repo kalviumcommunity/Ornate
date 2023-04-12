@@ -97,8 +97,10 @@ a:hover::after {
 
 /* navbar buttons styling */
 
-.profile_btn{
+#profile_btn{
     width: 8vw;
+    border-radius: 35px; 
+    margin-right: 25px;
 }
 .upload_button{
     width: 15vw;

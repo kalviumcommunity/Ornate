@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import "../App.css";
 import Navbar from "../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
-import { BsArrowRight } from "react-icons/bs";
+import { BsCloudUpload } from "react-icons/bs";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useUploadContext } from "../hooks/useUploadContext";
-import { ImBin2 } from "react-icons/im";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -48,7 +47,6 @@ const Profile = () => {
           {/* User Details Section */}
           <div className="per_details">
             <h1>Hey {user?.username} ,</h1>
-            <h3>Date of Birth : 09 November 2004</h3>
             <h3>Email-Id :{user.email}</h3>
             <h3>Contact : 0123456789</h3>
             <div id="upload_btn">
@@ -56,8 +54,8 @@ const Profile = () => {
                 className="transmit_button gradient_button "
                 onClick={() => navigate("/upload")}
               >
-                Upload Your Designs
-                <BsArrowRight style={{ marginLeft: "12px", scale: "1.3" }} />
+                Upload Your Designs&nbsp;&nbsp;&nbsp;
+                <BsCloudUpload fontSize="1.5em" />
               </button>
             </div>
           </div>
@@ -81,9 +79,7 @@ const Profile = () => {
                 <div id="post_card" key={i}>
                   <img src={e.pic} style={{ aspectRatio: "16/9" }} alt="" />
                   <span>{e.title}</span>
-                  <div id="upload_overlay">
-                    <ImBin2 />
-                  </div>
+                  <button>Delete post</button>
                 </div>
               );
             })}

@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: var(--white-color);
+  background-color: var(--black-color);
 }
 
 :root{
@@ -263,8 +263,7 @@ button {
 }
 
 #design_list{
-  background-image: url(./Images/background.jpg);
-  background-repeat: repeat-y;
+  background-image: url("./Images/background.jpg");
 }
 
 .list_header{
@@ -278,9 +277,7 @@ button {
   display: flex;
   align-items: center;
   width: 100%;
-  /* justify-content: center; */
   font-size: 5em;
-  /* text-shadow: 2px 2px 2px black; */
   font-family: 'Cabin Sketch', cursive;
   font-weight: bolder;
 }
@@ -318,6 +315,7 @@ button {
   width: 100%;
   display: flex;
   flex-direction: column;
+    background-image: url("./Images/background.jpg");
 }
 
 #search_section{
@@ -596,7 +594,11 @@ color: var(--black-color);
 }
 .tag_btn{
   margin: 0 2px 0 15px;
+  color: black;
 
+}
+.label_txt{
+  color: black;
 }
 
 #btn_div{
@@ -759,6 +761,8 @@ color: var(--black-color);
   justify-content: center;
   padding: 10px;
   border-radius: 5px;
+  position: relative;
+  transition: all 0.5s;
 }
 
 #post_card img{
@@ -769,25 +773,54 @@ color: var(--black-color);
 
 
 /* LOGOUT BUTTON STYLING */
+
 #logout_btn{
   font-weight: bold;
-
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  padding: 8px;  
+  font-size: 1em;
+  border-radius: 5px;
+}
+#logout_btn:hover{
+  scale: 1.05;
 }
 
+
 /* User uploads hover deletion div styling */
+
+
+#post_card:hover:before {
+  opacity: 1;
+}
+#post_card:hover .user_actions {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+#post_card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+
 #upload_overlay{
   position: relative;
   z-index: 3;
-  color: white;
+  color: orange;
   opacity: 0;
+  transform: translateY(10px);
+  transition: 0.5s;
   width: 100%;
-  height: 100%;
-}
-
-.post_card:hover:before {
-  opacity: 1;
-}
-
-.post_card:hover .upload_overlay {
-  opacity: 1;
 }
