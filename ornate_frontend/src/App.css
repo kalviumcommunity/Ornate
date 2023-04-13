@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: var(--white-color);
+  background-color: var(--black-color);
 }
 
 :root{
@@ -263,8 +263,7 @@ button {
 }
 
 #design_list{
-  background-image: url(./Images/background.jpg);
-  background-repeat: repeat-y;
+  background-image: url("./Images/background.jpg");
 }
 
 .list_header{
@@ -278,9 +277,7 @@ button {
   display: flex;
   align-items: center;
   width: 100%;
-  /* justify-content: center; */
   font-size: 5em;
-  /* text-shadow: 2px 2px 2px black; */
   font-family: 'Cabin Sketch', cursive;
   font-weight: bolder;
 }
@@ -318,6 +315,7 @@ button {
   width: 100%;
   display: flex;
   flex-direction: column;
+    background-image: url("./Images/background.jpg");
 }
 
 #search_section{
@@ -522,10 +520,7 @@ color: var(--black-color);
 .user{
   width: 50%;
   height: 100%;
-  /* display: flex; */
   align-items: baseline;
-  /* align-items: center; */
-  /* justify-content: center; */
   flex-direction: column;
   margin-left: 5vh;
 }
@@ -599,7 +594,11 @@ color: var(--black-color);
 }
 .tag_btn{
   margin: 0 2px 0 15px;
+  color: black;
 
+}
+.label_txt{
+  color: black;
 }
 
 #btn_div{
@@ -612,14 +611,13 @@ color: var(--black-color);
 #upload_button{
   width: 20vw;
   border-radius: 0 !important ;
-
 }
 
 .upload_display{
   width: 40%;
   height: 100%;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   flex-direction: column;
   color: black;
   justify-content: center;
@@ -727,12 +725,20 @@ color: var(--black-color);
 
 /* Post displaying Section Styling */
 
-#per_posts{
+.per_posts{
   width: 100%;
   padding: 15px;
 }
 
-#per_posts h1{
+#no_post_div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+.per_posts h1{
   color: white;
   font-size: 2.5em;
   font-family: 'Cabin Sketch', cursive;
@@ -763,6 +769,8 @@ color: var(--black-color);
   justify-content: center;
   padding: 10px;
   border-radius: 5px;
+  position: relative;
+  transition: all 0.5s;
 }
 
 #post_card img{
@@ -773,7 +781,45 @@ color: var(--black-color);
 
 
 /* LOGOUT BUTTON STYLING */
+
 #logout_btn{
   font-weight: bold;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  padding: 8px;  
+  font-size: 1em;
+  border-radius: 5px;
+}
+#logout_btn:hover{
+  scale: 1.05;
+}
 
+
+
+#del_btn {
+  border-radius: 100rem;
+  font-family: 'Avenir Next';
+  font-size: 0.8rem;
+  padding: 5px;
+  width: 7vw;
+  color: white;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #78e4ff, #ff48fa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px black inset;
+}
+
+#del_btn:hover {
+  box-shadow: none;
+}
+
+#post_act{
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-top: 15px;
 }

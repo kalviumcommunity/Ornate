@@ -9,11 +9,11 @@ const requireAuth = require('../middleware/requireAuth')
 
 const router = express.Router()
 
-// Requiring Auth
-router.use(requireAuth)
-
 // Getting All Posts
 router.get('/', getPosts)
+
+// Requiring Auth
+router.use(requireAuth)
 
 // Getting Posts by a user
 router.get('/userPosts', getUserPosts)

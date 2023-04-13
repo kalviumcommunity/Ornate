@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRegister } from "../hooks/useRegister";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 
 const Register = ({ handleClick }) => {
   const [name, setName] = useState("");
@@ -8,11 +9,13 @@ const Register = ({ handleClick }) => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const { register, isLoading, error } = useRegister();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name,email);
+    console.log(name, email);
     await register(name, email, password, confirmpassword);
+    navigate("/");
   };
   return (
     <div className="user_act">

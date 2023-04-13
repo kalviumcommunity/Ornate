@@ -1,7 +1,7 @@
 import React from "react";
 import "./Tagline.css";
 import { BsArrowRight } from "react-icons/bs";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Tagline = () => {

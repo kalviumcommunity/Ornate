@@ -2,15 +2,18 @@ import React from "react";
 import "./Navbar.css";
 import "../../App.css";
 import logoImg from "../../Images/logon.png";
-import logoutimg from "../../Images/logout.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { CgProfile } from "react-icons/cg";
+import { AiOutlineLogout } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { logout } = useLogout();
   const { user } = useAuthContext();
+  const location = useLocation();
 
   const handleClick = () => {
     logout();
@@ -43,19 +46,25 @@ const Navbar = () => {
 
           {user && (
             <div className="elements">
-              <span>{user.email}</span>
+              {location.pathname !== "/Profile" ? (
+                <button
+                  className=" gradient_button "
+                  id="profile_btn"
+                  onClick={() => navigate("/Profile ")}
+                >
+                  Profile&nbsp;
+                  <CgProfile />
+                </button>
+              ) : (
+                <div></div>
+              )}
               <button
-                className="upload_button gradient_button"
-                onClick={() => navigate("/Profile ")}
-              >
-                Profile
-              </button>
-              <button
-                className=" gradient_button"
+                // className=" gradient_button"
                 id="logout_btn"
                 onClick={handleClick}
               >
-                Logout
+                Logout&nbsp;
+                <AiOutlineLogout fill="white" />
               </button>
             </div>
           )}

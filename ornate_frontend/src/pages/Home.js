@@ -10,73 +10,21 @@ import Linkedin from "../Images/LinkedIn.png";
 import Github from "../Images/GitHub.png";
 import { FcLike } from "react-icons/fc";
 import { CiSaveDown2 } from "react-icons/ci";
-import Card from "../Images/card.png";
 import "../App.css";
-import { BsFillChatLeftTextFill } from "react-icons/bs";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useUploadContext } from "../hooks/useUploadContext";
-
-const data = [
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-  {
-    image: Card,
-  },
-];
+import { BsCloudUpload } from "react-icons/bs";
 
 const Home = () => {
   const navigate = useNavigate();
   const { user } = useAuthContext();
   const { uploads, dispatch } = useUploadContext();
+  console.log({ uploads });
 
   useEffect(() => {
     const displayUploads = async () => {
-      const resp = await fetch(`${process.env.REACT_APP_API}/api/posts/`, {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      const resp = await fetch(`${process.env.REACT_APP_API}/api/posts/`);
 
       const json = await resp.json();
 
@@ -85,10 +33,8 @@ const Home = () => {
       }
     };
 
-    if (user) {
-      displayUploads();
-    }
-  }, [dispatch, user]);
+    displayUploads();
+  }, [dispatch]);
 
   return (
     <div id="main">
@@ -103,7 +49,7 @@ const Home = () => {
             {" "}
             Ornate is a design website which makes design search a blissful
             experience and a platform for budding artists to present their
-            designs. So, join the community today and Let's turn it to
+            designs. So, join the community today and let's turn it to
             Extraordinary.
           </span>{" "}
         </h1>
@@ -139,7 +85,8 @@ const Home = () => {
                   navigate("/upload");
                 }}
               >
-                Upload your Design
+                Upload your Design &nbsp;
+                <BsCloudUpload fontSize="1.25rem" />
               </button>
             </span>
           )}
@@ -163,7 +110,6 @@ const Home = () => {
             <div>
               <div className="card-container">
                 {/* Individual Card */}
-
                 {uploads &&
                   uploads.map((e, i) => {
                     return (
@@ -179,6 +125,7 @@ const Home = () => {
                         <div className="user_actions">
                           <div id="like_section">
                             <button className="like_button">
+                              {/* <p>{upload.title}</p> */}
                               <FcLike className="like" />
                             </button>
                           </div>

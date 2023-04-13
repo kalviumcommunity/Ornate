@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import "../App.css";
 import Navbar from "../components/Navbar/Navbar";
-import { Navigate, useNavigate } from "react-router-dom";
-import { BsArrowRight } from "react-icons/bs";
-import post from "../Images/uploadbg.png";
+import { useNavigate } from "react-router-dom";
+import { BsCloudUpload } from "react-icons/bs";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useUploadContext } from "../hooks/useUploadContext";
+import { MdDelete } from "react-icons/md";
+import nopostbg from "../Images/nopostsbg.png";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -35,6 +36,27 @@ const Profile = () => {
     }
   }, [dispatch, user]);
 
+  const handleDelete = async (post) => {
+    if (!user) {
+      return;
+    }
+
+    const resp = await fetch(
+      `${process.env.REACT_APP_API}/api/posts/${post._id}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      }
+    );
+    const json = await resp.json();
+
+    if (resp.ok) {
+      dispatch({ type: "DELETE", payload: json });
+    }
+  };
+
   return (
     <div className="profile_page">
       {/* Navbar of the Profile Page */}
@@ -48,7 +70,6 @@ const Profile = () => {
           {/* User Details Section */}
           <div className="per_details">
             <h1>Hey {user?.username} ,</h1>
-            <h3>Date of Birth : 09 November 2004</h3>
             <h3>Email-Id :{user.email}</h3>
             <h3>Contact : 0123456789</h3>
             <div id="upload_btn">
@@ -56,8 +77,8 @@ const Profile = () => {
                 className="transmit_button gradient_button "
                 onClick={() => navigate("/upload")}
               >
-                Upload Your Designs
-                <BsArrowRight style={{ marginLeft: "12px", scale: "1.3" }} />
+                Upload Your Designs&nbsp;&nbsp;&nbsp;
+                <BsCloudUpload fontSize="1.5em" />
               </button>
             </div>
           </div>
@@ -72,19 +93,32 @@ const Profile = () => {
 
         {/* Divison for showcasing posts of any particular user */}
       </div>
-      <div id="per_posts">
+      <div className="per_posts">
         <h1>Your Collection ~</h1>
-        <div className="posts">
-          {uploads &&
-            uploads.map((e, i) => {
-              return (
-                <div id="post_card" key={i}>
-                  <img src={e.pic} style={{ aspectRatio: "16/9" }} alt="" />
-                  <span>{e.title}</span>
-                </div>
-              );
-            })}
-        </div>
+        {uploads && uploads.length !== 0 ? (
+          <div className="posts">
+            {uploads &&
+              uploads.map((e, i) => {
+                return (
+                  <div id="post_card" key={i}>
+                    <img src={e.pic} style={{ aspectRatio: "16/9" }} alt="" />
+                    <div id="post_act">
+                      <span>{e.title}</span>
+                      <button id="del_btn" onClick={() => handleDelete(e)}>
+                        Delete post&nbsp;
+                        <MdDelete />
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        ) : (
+          <div className="per_posts" id="no_post_div">
+            <img src={nopostbg} alt="" />
+            <h1>No Posts Yet</h1>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -51,11 +51,13 @@
 }
 
 .classes:hover::before {
-    transform: scaleX(1);
-    opacity: 1;
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .display_class_image{
+  border-radius: 38px;
+  /* box-shadow: 5px 5px 25px grey; */
   width: 90%;
   opacity: 1;
   display: block;

@@ -58,7 +58,7 @@ const Classification = () => {
             {/* Image */}
             <img
               src={e.image}
-              alt="photography"
+              alt="classification images"
               className="display_class_image"
             />
             <p>{e.title}</p>

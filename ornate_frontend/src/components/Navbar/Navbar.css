@@ -5,10 +5,11 @@
     box-sizing: border-box;
 }
 
-/* Navbar Styling */
+
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
 
 
+/* NAVBAR STYLING */
 /* Main Parent navbar Tag */
 #navbar{
     width: 100%;
@@ -17,27 +18,18 @@
     justify-content: space-between;
 }
 
-/* Backdrop divison */
-#back-image{
-    position: absolute;
-    /* height: 33.5vh; */
-    width: 16.8vw;
-    z-index: 0;
-}
-
 /* logo divison styling */
 #logo{
     height: 100%;
     width: 15vw;
     z-index: 1;
-    /* margin-left: 20vw; */
 
 }
 .logo{
     height: 15vh;
 }
 
-/* quick link divison styling */
+/* Quick link divison styling */
 #quick_links{
     display: flex;
     flex-direction: row;
@@ -103,11 +95,15 @@ a:hover::after {
     opacity: 1;
 }
 
-/* upload button styling */
+/* navbar buttons styling */
+
+#profile_btn{
+    width: 8vw;
+    border-radius: 35px; 
+    margin-right: 25px;
+}
 .upload_button{
     width: 15vw;
-    font-size: 1em;
-    font-weight: bolder;
 }
 
 /* Search Button Divison Styling */
