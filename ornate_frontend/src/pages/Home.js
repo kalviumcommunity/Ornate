@@ -20,6 +20,7 @@ const Home = () => {
   const navigate = useNavigate();
   const { user } = useAuthContext();
   const { uploads, dispatch } = useUploadContext();
+  console.log({ uploads });
 
   useEffect(() => {
     const displayUploads = async () => {
@@ -85,7 +86,7 @@ const Home = () => {
                 }}
               >
                 Upload your Design &nbsp;
-                <BsCloudUpload fontSize="1.25 rem" />
+                <BsCloudUpload fontSize="1.25rem" />
               </button>
             </span>
           )}
@@ -109,7 +110,6 @@ const Home = () => {
             <div>
               <div className="card-container">
                 {/* Individual Card */}
-
                 {uploads &&
                   uploads.map((e, i) => {
                     return (
@@ -125,6 +125,7 @@ const Home = () => {
                         <div className="user_actions">
                           <div id="like_section">
                             <button className="like_button">
+                              {/* <p>{upload.title}</p> */}
                               <FcLike className="like" />
                             </button>
                           </div>

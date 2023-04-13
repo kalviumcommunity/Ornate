@@ -21,10 +21,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  contact: {
-    type: Number,
-    required: true,
-  },
+  // contact: {
+  //   type: Number,
+  //   required: true,
+  // },
 });
 
 // static register method
@@ -33,11 +33,10 @@ userSchema.statics.register = async function (
   username,
   email,
   password,
-  confirmpassword,
-  contact
+  confirmpassword
 ) {
   // Validation
-  if (!username || !email || !password || !confirmpassword || !contact) {
+  if (!username || !email || !password || !confirmpassword) {
     throw Error("All the fields must be filled.");
   }
   if (!validator.isEmail(email)) {
