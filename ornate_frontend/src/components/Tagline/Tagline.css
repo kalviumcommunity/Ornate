@@ -152,3 +152,17 @@
     height: 10px;
 
 }
+
+@media only screen and (max-width: 600px){
+    #content{
+        flex-direction: column;
+    }
+    #line_two{
+    font-size: 2rem;
+
+    }
+    #signIn img{
+        height: 15vh;
+    }
+
+  }
