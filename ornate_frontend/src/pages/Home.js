@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 
 import Classification from "../components/Classification/Classification";
@@ -8,16 +8,17 @@ import Instagram from "../Images/Instagram.png";
 import Facebook from "../Images/Vector.png";
 import Linkedin from "../Images/LinkedIn.png";
 import Github from "../Images/GitHub.png";
-import { FcLike } from "react-icons/fc";
-import { CiSaveDown2 } from "react-icons/ci";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useUploadContext } from "../hooks/useUploadContext";
 import { BsCloudUpload } from "react-icons/bs";
+import like from "../Images/love.png";
+import liked from "../Images/loved.png";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [isLiked, setIsLiked] = useState(false);
   const { user } = useAuthContext();
   const { uploads, dispatch } = useUploadContext();
   console.log({ uploads });
@@ -36,6 +37,12 @@ const Home = () => {
     displayUploads();
   }, [dispatch]);
 
+  function changeImage() {
+    if (user) {
+      setIsLiked(!isLiked);
+    }
+    navigate("/form");
+  }
   return (
     <div id="main">
       <Navbar />
@@ -124,15 +131,21 @@ const Home = () => {
                         {/* overlay on hovering */}
                         <div className="user_actions">
                           <div id="like_section">
-                            <button className="like_button">
-                              {/* <p>{upload.title}</p> */}
-                              <FcLike className="like" />
+                            <button
+                              className="like_button"
+                              onClick={changeImage}
+                            >
+                              <img
+                                src={isLiked ? liked : like}
+                                alt=""
+                                className="like"
+                              />
                             </button>
                           </div>
-                          <div id="save_section">
-                            <button className="save_button">
-                              Save <CiSaveDown2 fill="black" />
-                            </button>
+                          <div id="save_section" key={i}>
+                            <div>
+                              <p className="img_t">{e.title}</p>
+                            </div>
                           </div>
                         </div>
                       </div>

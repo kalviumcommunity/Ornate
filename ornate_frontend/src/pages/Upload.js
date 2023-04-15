@@ -5,6 +5,7 @@ import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useUploadContext } from "../hooks/useUploadContext";
+import TextField from "@material-ui/core/TextField";
 
 const Upload = () => {
   const navigate = useNavigate();
@@ -70,9 +71,15 @@ const Upload = () => {
 
         <div id="user_actions">
           {/* Main upload Form */}
-          <form className="user" onSubmit={handleSubmit}>
+          <form
+            className="user"
+            // noValidate
+            // autoComplete="off"
+            onSubmit={handleSubmit}
+          >
             {/* <TextField id="outlined-basic" label="Name of your Design" variant="outlined" /> */}
             <div className="upd_inpt_div">
+              {/* <TextField /> */}
               <input
                 className="upd_inp"
                 type="text"
