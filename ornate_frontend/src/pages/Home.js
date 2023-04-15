@@ -44,7 +44,7 @@ const Home = () => {
     navigate("/form");
   }
   return (
-    <div id="main">
+    <div id="main" data-testid="home">
       <Navbar />
       <Tagline />
       <img src={bgImg} alt="" className="bg-img" />
