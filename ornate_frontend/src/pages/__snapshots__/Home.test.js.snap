@@ -1,0 +1,341 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<div
+  data-testid="home"
+  id="main"
+>
+  <nav
+    id="navbar"
+  >
+    <div
+      id="logo"
+    >
+      <div
+        className=""
+        to="/"
+      >
+        <img
+          alt="site logo"
+          className="logo"
+          src="logon.png"
+        />
+      </div>
+    </div>
+    <div
+      id="quick_links"
+    >
+      <div
+        id="navbar_links"
+      >
+        <div
+          className="elements"
+        >
+          <a
+            className="link_text"
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </div>
+        <div
+          className="elements"
+        >
+          <a
+            className="link_text"
+            href="/#design_list"
+          >
+            Discover
+          </a>
+        </div>
+        <div>
+          <button
+            className="upload_button gradient_button"
+            onClick={[Function]}
+            style={
+              Object {
+                "width": "9vw",
+              }
+            }
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div
+    id="content"
+  >
+    <div
+      id="tagline"
+    >
+      <div
+        id="line_one"
+      >
+        Let's turn it to
+      </div>
+      <div
+        id="line_two"
+      >
+        Extraordinary
+      </div>
+      <button
+        className="transmit_button gradient_button "
+        onClick={[Function]}
+      >
+        Upload Your Designs
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+              "marginLeft": "12px",
+              "scale": "1.3",
+            }
+          }
+          viewBox="0 0 16 16"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      id="signIn"
+    >
+      <img
+        alt=""
+        src="https://img.freepik.com/premium-photo/interface-designer-flat-illustration_250484-3247.jpg?size=626&ext=jpg&ga=GA1.1.542337575.1679558435&semt=ais"
+      />
+    </div>
+  </div>
+  <img
+    alt=""
+    className="bg-img"
+    src="background.jpg"
+  />
+  <div
+    id="floating_div"
+  >
+    <h1>
+      BECAUSE BORING
+    </h1>
+    <h1>
+      IS BAD FOR
+       
+      <span>
+         
+        Ornate is a design website which makes design search a blissful experience and a platform for budding artists to present their designs. So, join the community today and let's turn it to Extraordinary.
+      </span>
+       
+    </h1>
+    <h1>
+      BUSINESS
+    </h1>
+    <div
+      id="icon_div"
+    >
+      <a
+        href="https://www.instagram.com/?utm_source=pwa_homescreen"
+      >
+        <img
+          alt=""
+          className="logos"
+          src="Instagram.png"
+        />
+      </a>
+      <a
+        href="https://www.facebook.com/"
+      >
+        <img
+          alt=""
+          className="logos"
+          src="Vector.png"
+        />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/priyanshirana/"
+      >
+        <img
+          alt=""
+          className="logos"
+          src="LinkedIn.png"
+        />
+      </a>
+      <a
+        href="https://github.com/Ranapriyanshi"
+      >
+        <img
+          alt=""
+          className="logos"
+          src="GitHub.png"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    id="design_list"
+  >
+    <div
+      className="list_header"
+    >
+      <h1>
+        Explore Distinctions
+      </h1>
+      <span>
+        <button
+          className="upload_button gradient_button"
+          onClick={[Function]}
+        >
+          Join Community
+        </button>
+      </span>
+    </div>
+    <div
+      id="classification_section"
+    >
+      <div
+        className="classes"
+        style={
+          Object {
+            "content": "Photography",
+          }
+        }
+      >
+        <img
+          alt="classification images"
+          className="display_class_image"
+          src="Photography.png"
+        />
+        <p>
+          Photography
+        </p>
+      </div>
+      <div
+        className="classes"
+        style={
+          Object {
+            "content": "Architecture",
+          }
+        }
+      >
+        <img
+          alt="classification images"
+          className="display_class_image"
+          src="architecture.png"
+        />
+        <p>
+          Architecture
+        </p>
+      </div>
+      <div
+        className="classes"
+        style={
+          Object {
+            "content": "Advertisement",
+          }
+        }
+      >
+        <img
+          alt="classification images"
+          className="display_class_image"
+          src="advertising.png"
+        />
+        <p>
+          Advertisement
+        </p>
+      </div>
+      <div
+        className="classes"
+        style={
+          Object {
+            "content": "Fashion",
+          }
+        }
+      >
+        <img
+          alt="classification images"
+          className="display_class_image"
+          src="Fashion.png"
+        />
+        <p>
+          Fashion
+        </p>
+      </div>
+      <div
+        className="classes"
+        style={
+          Object {
+            "content": "UI/UX",
+          }
+        }
+      >
+        <img
+          alt="classification images"
+          className="display_class_image"
+          src="UIUX.png"
+        />
+        <p>
+          UI/UX
+        </p>
+      </div>
+      <div
+        className="classes"
+        style={
+          Object {
+            "content": "Sketching",
+          }
+        }
+      >
+        <img
+          alt="classification images"
+          className="display_class_image"
+          src="Sketching.png"
+        />
+        <p>
+          Sketching
+        </p>
+      </div>
+      <div
+        className="classes"
+        style={
+          Object {
+            "content": "Illustrations",
+          }
+        }
+      >
+        <img
+          alt="classification images"
+          className="display_class_image"
+          src="Illustrations.png"
+        />
+        <p>
+          Illustrations
+        </p>
+      </div>
+    </div>
+    <div
+      id="image_content"
+    >
+      <div
+        id="content_section"
+      >
+        <div>
+          <div
+            className="card-container"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
