@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
-
+import Footer from "../pages/Footer";
 import Classification from "../components/Classification/Classification";
 import Tagline from "../components/Tagline/Tagline";
 import bgImg from "../Images/background.jpg";
@@ -21,7 +21,7 @@ const Home = () => {
   const [isLiked, setIsLiked] = useState(false);
   const { user } = useAuthContext();
   const { uploads, dispatch } = useUploadContext();
-  console.log({ uploads });
+  // console.log({ uploads });
 
   useEffect(() => {
     const displayUploads = async () => {
@@ -48,7 +48,7 @@ const Home = () => {
       <Navbar />
       <Tagline />
       <img src={bgImg} alt="" className="bg-img" />
-      <div id="floating_div">
+      <div className="floating_div">
         <h1>BECAUSE BORING</h1>
         <h1>
           IS BAD FOR{" "}
@@ -80,6 +80,8 @@ const Home = () => {
           </a>
         </div>
       </div>
+      <Footer />
+
       <div id="design_list">
         <div className="list_header">
           <h1>Explore Distinctions</h1>

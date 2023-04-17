@@ -5,11 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Tagline = () => {
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  // };
+
   const navigate = useNavigate();
   const { user } = useAuthContext();
+  
   return (
     <div id="content">
       {/* Taglone of the divison */}
