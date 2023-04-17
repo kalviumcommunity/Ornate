@@ -80,7 +80,6 @@ const Home = () => {
           </a>
         </div>
       </div>
-      <Footer />
 
       <div id="design_list">
         <div className="list_header">
@@ -156,6 +155,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+<Footer />
         </div>
       </div>
     </div>

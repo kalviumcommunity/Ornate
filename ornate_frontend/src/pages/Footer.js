@@ -4,11 +4,24 @@ import { FaStar } from "react-icons/fa";
 import { Field, Form, Formik } from "formik";
 import { Grid } from "@mui/material";
 import * as Yup from "yup";
-import { TextField } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import { styled } from "@mui/material/styles";
+import { Button, ChakraProvider, Stack } from "@chakra-ui/react";
+
+const CustomTextField = styled(TextField)({
+  "& label.Mui-focused": {
+    color: "#9900ff",
+  },
+  "& .MuiOutlinedInput-root": {
+    "&.Mui-focused fieldset": {
+      borderColor: "#9900ff",
+    },
+  },
+});
 
 const colors = {
-  yellow: "#FF8CC6",
-  white: "#ffffff",
+  yellow: "#9900ff",
+  white: "#FF8CC6",
 };
 
 const initial_form_state = {};
@@ -72,31 +85,27 @@ const Footer = () => {
           }}
         >
           <Form autoComplete="off">
-            <Grid
-              container
+            <CustomTextField label="Email Id" variant="outlined" fullWidth />
+            <p
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "10px",
-                width: "100%",
+                color: "#9900ff",
+                fontFamily: "Courier New",
+                fontSize: "1.2em",
               }}
             >
-              <Grid item style={{ width: "100%" }}>
-                <Field
-                  fullWidth
-                  name="email"
-                  component={TextField}
-                  label="Email Address"
-                ></Field>
-              </Grid>
-              <Grid item>
-                <Field
-                  name="feedback"
-                    component={TextField}s
-                  label="Feedback"
-                ></Field>
-              </Grid>
-            </Grid>
+              How can we improve the application
+            </p>
+            <CustomTextField
+              fullWidth
+              label="Feedback"
+              variant="outlined"
+              style={{marginBottom: '1vh'}}
+            ></CustomTextField>
+            <ChakraProvider>
+              <Stack align="center" spacing={4}>
+                <Button colorScheme="purple">Submit</Button>
+              </Stack>
+            </ChakraProvider>
           </Form>
         </Formik>
       </div>
