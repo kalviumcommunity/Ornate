@@ -1,18 +1,20 @@
 const express = require("express");
 const app = express();
-const cors = require("cors")
+const cors = require("cors");
 require("dotenv").config();
-
 
 const port = process.env.PORT || 300;
 
+app.use(express.json());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://ornate-app.netlify.app/"]
+  })
+);
+
 const userRoutes = require("./router/auth");
 const postRoutes = require("./router/upload");
-
-// require("./DB/conn");
-app.use(express.json());
-app.use(cors())
-// const User = require("./model/userSchema");
+const postFeed = require("./router/feed");
 
 // middlewares
 app.use((req, res, next) => {
@@ -23,6 +25,7 @@ app.use((req, res, next) => {
 // using Routes
 app.use("/api/auth", userRoutes);
 app.use("/api/posts", postRoutes);
+app.use("/api/feed", postFeed);
 
 app.listen(port, () => {
   console.log("listening to post", port);

@@ -18,7 +18,7 @@ export const AuthContextProvider = ({ children }) => {
     user: null,
   });
 
-  // Checking weather the user is there in the local storage and login the user again.
+  // Checking weather the user is there in the session storage and login the user again.
 
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem("user"));

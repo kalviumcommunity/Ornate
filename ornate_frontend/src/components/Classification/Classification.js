@@ -1,5 +1,6 @@
 import React from "react";
-// importing images required
+
+// Importing images required
 import photography from "../../Images/Photography.png";
 import fashion from "../../Images/Fashion.png";
 import uiux from "../../Images/UIUX.png";
@@ -7,10 +8,12 @@ import sketching from "../../Images/Sketching.png";
 import illustrations from "../../Images/Illustrations.png";
 import architecture from "../../Images/architecture.png";
 import advertising from "../../Images/advertising.png";
-// importing styling
+// Importing styling
 import "./Classification.css";
 
 const Classification = () => {
+
+  // Array of all the images of classification section
   const data = [
     {
       title: "Photography",
@@ -47,6 +50,8 @@ const Classification = () => {
 
     // Main classification Divison
     <div id="classification_section">
+
+      {/* Mapping through the image array */}
       {data.map((e, i) => {
         const style = {
           main: {
@@ -55,7 +60,6 @@ const Classification = () => {
         };
         return (
           <div className="classes" key={i} style={style.main}>
-            {/* Image */}
             <img
               src={e.image}
               alt="classification images"

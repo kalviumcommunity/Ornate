@@ -23,12 +23,11 @@ const getUserPosts = async (req, resp) => {
 const uploadPosts = async (req, resp) => {
     const { title, desc, tag, pic } = req.body
 
-    // console.log(req)
     
     if (!title || !desc || !tag || !pic) {
         return resp.status(400).json({error: 'Please fill in all the fields!'})
     }
-
+    
     try {
         const user_id = req.user._id
         const upload = await Uploads.create({ title, desc, tag, pic, user_id })
