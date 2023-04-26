@@ -24,7 +24,7 @@ export const useLogin = () => {
       setError(json.error);
     }
     if (response.ok) {
-      // Saving user to local storage
+      // Saving user to session storage
       sessionStorage.setItem("user", JSON.stringify(json));
 
       // Updating Auth context

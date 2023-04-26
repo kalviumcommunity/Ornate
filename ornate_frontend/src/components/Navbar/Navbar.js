@@ -1,13 +1,19 @@
 import React from "react";
+
+// Importing Styling
 import "./Navbar.css";
 import "../../App.css";
+
 import logoImg from "../../Images/logon.png";
-import { Link, useNavigate } from "react-router-dom";
-import { useLogout } from "../../hooks/useLogout";
-import { useAuthContext } from "../../hooks/useAuthContext";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+
+// Importing React icons
 import { CgProfile } from "react-icons/cg";
 import { AiOutlineLogout } from "react-icons/ai";
-import { useLocation } from "react-router-dom";
+
+import { useLogout } from "../../hooks/useLogout";
+import { useAuthContext } from "../../hooks/useAuthContext";
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -59,7 +65,6 @@ const Navbar = () => {
                 <div></div>
               )}
               <button
-                // className=" gradient_button"
                 id="logout_btn"
                 onClick={handleClick}
               >

@@ -42,6 +42,7 @@ const Login = ({handleClick}) => {
           />
         </div>
 
+        {/* LOGIN button */}
         <button
           type="submit"
           id="submit"

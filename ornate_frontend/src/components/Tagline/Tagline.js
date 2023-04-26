@@ -4,6 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
+
 const Tagline = () => {
 
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const Tagline = () => {
         )}
       </div>
 
-      {/* Main image */}
+      {/* Image Section */}
       <div id="signIn">
         <img
           src="https://img.freepik.com/premium-photo/interface-designer-flat-illustration_250484-3247.jpg?size=626&ext=jpg&ga=GA1.1.542337575.1679558435&semt=ais"

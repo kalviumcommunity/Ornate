@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
-import Footer from "../pages/Footer";
+import Footer from "../pages/Feedback";
 import Classification from "../components/Classification/Classification";
 import Tagline from "../components/Tagline/Tagline";
 import bgImg from "../Images/background.jpg";
