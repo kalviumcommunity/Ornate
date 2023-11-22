@@ -13,7 +13,6 @@ import { AiOutlineLogout } from "react-icons/ai";
 
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
-// import { Icon } from "@mui/material";
 
 const Navbar = () => {
   const navigate = useNavigate();
