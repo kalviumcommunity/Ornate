@@ -4,7 +4,7 @@ import React from "react";
 import "./Navbar.css";
 import "../../App.css";
 
-import logoImg from "../../Images/logon.png";
+import logoImg from "../../Images/logo.png";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 // Importing React icons
@@ -13,7 +13,7 @@ import { AiOutlineLogout } from "react-icons/ai";
 
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
-
+// import { Icon } from "@mui/material";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -29,62 +29,62 @@ const Navbar = () => {
   return (
     // NAVBAR ELEMENT
     <nav id="navbar">
-      {/* Logo Divison */}
-      <div id="logo">
-        <div to="/" className="">
-          <img src={logoImg} alt="site logo" className="logo" />
+      <div className="floating-nav">
+        {/* Logo Divison */}
+        <div id="logo">
+          <div to="/" className="">
+            <img
+              style={{ height: "10vh" }}
+              alt="site logo"
+              src={logoImg}
+              className="logo"
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Quick Links Divison */}
-      <div id="quick_links">
-        <div id="navbar_links">
-          <div className="elements">
-            <Link to="/" className="link_text">
-              Home
-            </Link>
-          </div>
-          <div className="elements">
-            <a href="/#design_list" className="link_text">
-              Discover
-            </a>
-          </div>
-
-          {user && (
+        {/* Quick Links Divison */}
+        <div id="quick_links">
+          <div id="navbar_links">
             <div className="elements">
-              {location.pathname !== "/Profile" ? (
-                <button
-                  className=" gradient_button "
-                  id="profile_btn"
-                  onClick={() => navigate("/Profile ")}
-                >
-                  Profile&nbsp;
-                  <CgProfile />
-                </button>
-              ) : (
-                <div></div>
-              )}
-              <button
-                id="logout_btn"
-                onClick={handleClick}
-              >
-                Logout&nbsp;
-                <AiOutlineLogout fill="white" />
-              </button>
+              <Link to="/" className="link_text">
+                Home
+              </Link>
             </div>
-          )}
+            <div className="elements">
+              <a href="/#design_list" className="link_text">
+                Discover
+              </a>
+            </div>
 
-          {!user && (
-            <div>
-              <button
-                className="upload_button gradient_button"
-                style={{ width: "9vw" }}
-                onClick={() => navigate("/Form")}
-              >
-                Register
-              </button>
-            </div>
-          )}
+            {user && (
+              <div className="elements">
+                {location.pathname !== "/Profile" ? (
+                  <button id="logout_btn" onClick={() => navigate("/Profile ")}>
+                    Profile&nbsp;
+                    <CgProfile />
+                  </button>
+                ) : (
+                  <div></div>
+                )}
+                <button id="logout_btn" onClick={handleClick}>
+                  Logout&nbsp;
+                  <AiOutlineLogout fill="black" />
+                </button>
+              </div>
+            )}
+
+            {!user && (
+              <div>
+                <button
+                  className="upload_button gradient_button"
+                  style={{ width: "9vw" }}
+                  onClick={() => navigate("/Form")}
+                >
+                  Register
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>

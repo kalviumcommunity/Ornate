@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+  import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../pages/Feedback";
 import Classification from "../components/Classification/Classification";
@@ -155,7 +155,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-<Footer />
+          <Footer />
         </div>
       </div>
     </div>

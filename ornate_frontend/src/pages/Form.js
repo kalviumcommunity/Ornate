@@ -44,9 +44,6 @@ const Form = () => {
           ) : (
             <Register handleClick={handleClick} />
           )}
-          {/* <Signup /> */}
-
-          {/* <Register /> */}
         </div>
       </div>
     </div>

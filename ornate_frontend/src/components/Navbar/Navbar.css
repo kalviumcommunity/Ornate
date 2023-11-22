@@ -1,128 +1,172 @@
 /* Universal Styling */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap");
 
 /* NAVBAR STYLING */
 /* Main Parent navbar Tag */
-#navbar{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+#navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black !important;
+}
+
+.floating-nav {
+  position: fixed;
+  top: 1.5vh;
+  left: 2vh;
+  right: 2vh;
+  border-radius: 50px;
+  /* width: 100%; */
+  z-index: 1;
+  display: flex;
+  height: 7vh;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  /* background: linear-gradient(
+    270deg,
+    rgba(85, 0, 255, 1) 0%,
+    rgba(158, 0, 255, 1) 100%
+  ); */
+  color: black;
 }
 
 /* logo divison styling */
-#logo{
-    height: 100%;
-    width: 15vw;
-    z-index: 1;
-
+#logo {
+  height: 100%;
+  width: 15vw;
+  z-index: 1;
 }
-.logo{
-    height: 15vh;
+.logo {
+  height: 15vh;
 }
 
 /* Quick link divison styling */
-#quick_links{
-    display: flex;
-    flex-direction: row;
-    width: 45vw;
-    align-items: center;
-    z-index: 1;
+#quick_links {
+  display: flex;
+  flex-direction: row;
+  width: 45vw;
+  align-items: center;
+  z-index: 1;
+  color: black;
 }
 
-#navbar_links{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
+#navbar_links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  color: black;
 }
 a {
-    color: white;
-    font-size:  1.2rem;
-    padding: 10px 20px;
-    text-decoration: none;
-    position: relative;
-    display: block;
+  color: black;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  text-decoration: none;
+  position: relative;
+  display: block;
 }
 
 a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-top: 2px solid  linear-gradient(270deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%)/*rgb(158, 0, 255)*/;
-    border-bottom: 2px solid rgb(158, 0, 255);
-    transform: scaleY(2);
-    opacity: 0;
-    transition: .3s;
+  content: "";
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid
+    linear-gradient(270deg, rgba(85, 0, 255, 1) 0%, rgba(158, 0, 255, 1) 100%)
+    /*rgb(158, 0, 255)*/;
+  border-bottom: 2px solid rgb(158, 0, 255);
+  transform: scaleY(2);
+  opacity: 0;
+  transition: 0.3s;
 }
 
 a::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(270deg, rgba(85,0,255,1) 0%, rgba(158,0,255,1) 100%);
-    transform: scale(0);
-    opacity: 0;
-    transition: .3s;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    270deg,
+    rgba(85, 0, 255, 1) 0%,
+    rgba(158, 0, 255, 1) 100%
+  );
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: -1;
 }
 
 a:hover {
-    color: white;
+  color: white;
 }
 
 a:hover::before {
-    transform: scaleY(1);
-    opacity: 1;
+  transform: scaleY(1);
+  opacity: 1;
 }
 
 a:hover::after {
-    transform: scaleY(1);
-    opacity: 1;
+  transform: scaleY(1);
+  opacity: 1;
 }
 
 /* navbar buttons styling */
 
-#profile_btn{
-    width: 8vw;
-    border-radius: 35px; 
-    margin-right: 25px;
+.elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
 }
-.upload_button{
-    width: 15vw;
+
+.profile_btn {
+  background-color: white;
+  color: black;
+}
+
+/* #profile_btn {
+  width: 8vw;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 35px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+} */
+.upload_button {
+  width: 15vw;
 }
 
 /* Search Button Divison Styling */
-#search_section{
-    width: 42vw;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    color: white;
-    z-index: 1;
+#search_section {
+  width: 42vw;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  color: white;
+  z-index: 1;
 }
 
-#search_box{
-    width: 35vw;
-    background-color: grey;
-    height: 5vh;
-    opacity: 0.6;
-    /* border-radius :15vh; */
-    border: solid white 3px;
+#search_box {
+  width: 35vw;
+  background-color: grey;
+  height: 5vh;
+  opacity: 0.6;
+  /* border-radius :15vh; */
+  border: solid white 3px;
 }
 
 ::placeholder {
@@ -131,38 +175,34 @@ a:hover::after {
   align-items: center;
   justify-content: center;
   color: var(--white-color);
-
 }
-
-
 
 /* Sign Up/ Login Divison Styling */
-#user_action{
-    width: 15vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    gap: 0.4rem;
-    background-color: transparent;
+#user_action {
+  width: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  gap: 0.4rem;
+  background-color: transparent;
 }
 
-#signup_button{
-    background-color: var(--purple-color);
-    /* background: rgb(63,94,251);
+#signup_button {
+  background-color: var(--purple-color);
+  /* background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,151,1) 5%, rgba(252,70,107,1) 100%); */
-    padding: 2vh;
-    border-radius: 10vh;
-    color: white;
-    font-size: 1.1rem;
-    border-style: none;
-    /* background: transparent; */
+  padding: 2vh;
+  border-radius: 10vh;
+  color: white;
+  font-size: 1.1rem;
+  border-style: none;
+  /* background: transparent; */
 }
 
-
-#login{
-    text-decoration: underline solid var(--purple-color) 2px;
-    background-color: transparent;
+#login {
+  text-decoration: underline solid var(--purple-color) 2px;
+  background-color: transparent;
 }
 
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";

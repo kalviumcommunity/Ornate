@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import {useAuthContext} from "../hooks/useAuthContext";
 // impoting Styling
 import "../App.css";
 
@@ -16,7 +16,6 @@ import { styled } from "@mui/material/styles";
 
 // Chakra UI
 import { Button, ChakraProvider, Stack } from "@chakra-ui/react";
-import { useAuthContext } from "../hooks/useAuthContext";
 
 const CustomTextField = styled(TextField)({
   "& label.Mui-focused": {
@@ -49,30 +48,30 @@ const Footer = () => {
   const { error, setError } = useState(null);
   const { user } = useAuthContext();
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  //   const Body = (feedmail, feed);
+    const Body = (feedmail, feed);
 
-  //   const resp = await fetch(`${process.env.REACT_APP_API}/api/feed`, {
-  //     method: "POST",
-  //     body: JSON.stringify(Body),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${user.token}`,
-  //     },
-  //   });
+    const resp = await fetch(`${process.env.REACT_APP_API}/api/feed`, {
+      method: "POST",
+      body: JSON.stringify(Body),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+    });
 
-  //   const json = await resp.json();
+    const json = await resp.json();
 
-  //   if (!resp.ok) {
-  //     setError(json.error);
-  //   }
-  //   if (resp.ok) {
-  //     setFeedmail("");
-  //     setFeed("");
-  //   }
-  // };
+    if (!resp.ok) {
+      setError(json.error);
+    }
+    if (resp.ok) {
+      setFeedmail("");
+      setFeed("");
+    }
+  };
 
   const handleClick = (value) => {
     setcurrentValue(value);
@@ -149,7 +148,7 @@ const Footer = () => {
             ></CustomTextField>
             <ChakraProvider>
               <Stack align="center" spacing={4}>
-                <Button type="submit" colorScheme="purple">
+                <Button type="submit" colorScheme="purple" onClick={()=>{handleSubmit()}}>
                   Submit
                 </Button>
               </Stack>
